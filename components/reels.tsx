@@ -3,6 +3,7 @@
 import { useRef, useState } from "react"
 import type { Reel } from "@/lib/content"
 import { Photo } from "./photo"
+import { LoopVideo } from "./loop-video"
 
 declare global {
   interface Window {
@@ -95,6 +96,7 @@ export function Reels({ reels }: { reels: Reel[] }) {
               aria-label={`Watch reel: “${r.caption}”, ${r.views} views`}
             >
               <Photo slot={r.cover} sizes="(min-width: 1024px) 360px, (min-width: 640px) 45vw, 76vw" className="zoom" />
+              {r.video && <LoopVideo src={r.video} />}
               <span aria-hidden className="mono absolute left-3 top-3 rounded-full bg-bg px-2.5 py-1 !text-[11px] text-ink">
                 #{i + 1}
               </span>

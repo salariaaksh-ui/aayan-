@@ -87,10 +87,12 @@ export type Reel = {
   bar: number
   url: string
   cover: ImageSlot
+  /** Optional silent loop (in /public/video) that plays on the card while it's on screen */
+  video?: string
 }
 
-const cover = (n: number, alt: string): ImageSlot => ({
-  src: null,
+const cover = (n: number, alt: string, src: string | null = null): ImageSlot => ({
+  src,
   alt,
   label: `REEL COVER ${n} · 9:16`,
   ratio: "9 / 16",
@@ -120,7 +122,8 @@ export const reels: Reel[] = [
     engagement: "1.2%",
     bar: 60,
     url: "https://www.instagram.com/aayann26_/reel/DdjWW9bsgkW/",
-    cover: cover(2, "Cover of Aayan's Zudio collab reel"),
+    cover: cover(2, "Aayan and a co-creator walking through a Zudio store", "/photos/reel-2.webp"),
+    video: "/video/reel-2.mp4",
   },
   {
     chip: "Humour",
@@ -132,7 +135,8 @@ export const reels: Reel[] = [
     engagement: "6.3%",
     bar: 40,
     url: "https://www.instagram.com/aayann26_/reel/DXwTELrRX6L/",
-    cover: cover(3, "Cover of Aayan's humour reel"),
+    cover: cover(3, "Aayan leaning into the camera with dating-term captions around him", "/photos/reel-3.webp"),
+    video: "/video/reel-3.mp4",
   },
   {
     chip: "Humour",
@@ -144,7 +148,7 @@ export const reels: Reel[] = [
     engagement: "3.8%",
     bar: 25,
     url: "https://www.instagram.com/aayann26_/reel/DX0_xOdx4Zo/",
-    cover: cover(4, "Cover of Aayan's humour reel"),
+    cover: cover(4, "Aayan pointing at a wall under the caption 'how many exes do you have?'", "/photos/reel-4.webp"),
   },
   {
     chip: "Fits & transitions",
@@ -156,7 +160,7 @@ export const reels: Reel[] = [
     engagement: "7.3%",
     bar: 16,
     url: "https://www.instagram.com/aayann26_/reel/DVlLpO-EaWb/",
-    cover: cover(5, "Cover of Aayan's outfit transition reel"),
+    cover: cover(5, "Aayan in a red shirt, reflected in a mirror", "/photos/reel-5.webp"),
   },
   {
     chip: "Travel",
@@ -168,7 +172,7 @@ export const reels: Reel[] = [
     engagement: "6.0%",
     bar: 13,
     url: "https://www.instagram.com/aayann26_/reel/DZkCcAVRB7Y/",
-    cover: cover(6, "Cover of Aayan's Kashmir trek reel"),
+    cover: cover(6, "Green mountain valley on a Kashmir trek", "/photos/reel-6.webp"),
   },
 ]
 
@@ -184,8 +188,8 @@ export const collabs = [
     text: "Outfit reel posted as a collab on Zudio's own Instagram account. Commenters called him a fashion influencer.",
     url: reels[1].url,
     image: {
-      src: null,
-      alt: "Still from Aayan's Zudio reel",
+      src: "/photos/collab-zudio.webp",
+      alt: "Aayan from behind in a striped Zudio tee",
       label: "ZUDIO COLLAB STILL · 4:5",
       ratio: "4 / 5",
     } as ImageSlot,
@@ -193,7 +197,7 @@ export const collabs = [
 ]
 
 export const images = {
-  hero: { src: null, alt: "Aayan, portrait", label: "HERO PHOTO · 4:5 · 1200×1500", ratio: "4 / 5" },
+  hero: { src: "/photos/hero.webp", alt: "Aayan in a red tee, hand in his hair, in a clothing store", label: "HERO PHOTO · 4:5 · 1200×1500", ratio: "4 / 5" },
   about: { src: null, alt: "Aayan, candid photo", label: "ABOUT PHOTO · CANDID", ratio: "4 / 5" },
 } satisfies Record<string, ImageSlot>
 
