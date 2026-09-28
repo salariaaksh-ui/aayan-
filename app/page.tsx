@@ -86,10 +86,6 @@ export default function Home() {
               <div className="tilt glare rounded-2xl" data-tilt="7">
                 <Photo slot={images.hero} priority sizes="(min-width: 1024px) 45vw, 420px" className="enter-photo shadow-[0_30px_60px_-30px_rgb(27_24_20/0.45)]" />
               </div>
-              <p className="sticker enter-sticker mono num absolute -bottom-5 left-3 !text-[12px] lg:-left-8">
-                <svg aria-hidden width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M6 4v16l14-8z" /></svg>
-                {hero.tag}
-              </p>
               <p aria-hidden className="mono absolute -right-2 top-6 hidden origin-top-right -rotate-90 !text-[11px] text-muted lg:block">
                 {site.handle}
               </p>
@@ -233,7 +229,7 @@ export default function Home() {
             <div>
               <SectionTitle id="about-title" eyebrow="About">{about.title}</SectionTitle>
               <p className="mt-5 max-w-[60ch] text-[17px] sm:mt-6 sm:text-[18px]">
-                {about.body} <span className="text-muted">{about.bodyPlaceholder}</span>
+                {about.body}
               </p>
               <dl className="mt-8 grid gap-3 border-t border-line pt-6">
                 {about.facts.map(([k, val], i) => (

@@ -50,7 +50,6 @@ Tone: confident, young, clean and credible. It should feel like a creator who is
 - Subheadline: **Relatable humour, fits and travel, made to be shared.**
 - Supporting line: *1.8M+ reel views across his own reels and collabs, with Zudio already on the list.*
 - Buttons: primary **Work with me** (to Contact); secondary **Watch reels** (to Featured reels).
-- Small floating tag overlapping the photo corner: `513K views · top reel`
 - Photo: `[HERO PHOTO: best portrait/fit shot, vertical]`
 
 ### 4.3 Numbers strip
@@ -117,14 +116,13 @@ A masonry grid of 6–9 photos (3 columns desktop, 2 mobile), with slight roundi
 ### 4.8 About
 Two columns: a photo on the left (`[ABOUT PHOTO: casual/candid]`), text on the right.
 Title: **Hi, I'm Aayan.**
-Body (keep the placeholders visible until they're filled):
-> I make reels about everyday life, dating and the stuff everyone's thinking but nobody says, plus fits and the occasional trek. I split my time between Delhi and Jammu. [1–2 lines in Aayan's own words: what he studies or does, what he's into, what kind of brands he loves working with.]
+Body (owner's copy, Sep 2026):
+> I make reels about everyday life, glow-ups, and the fits that go with them — transitions, styling, and the occasional trek thrown in. Based between Delhi and Jammu. When I'm not filming, I'm probably re-editing a transition for the 10th time or planning the next trip. I love working with brands in fashion, grooming, and travel — the kind of stuff I'd actually use myself.
 
 Small facts list in mono:
 - Based in: Delhi / Jammu
-- Content: humour · fits & transitions · travel
-- Languages: [e.g. Hindi, English]
-- Available for: reels, integrations, shoots
+- Content: Transitions · Lifestyle · Fits
+- Available for: Reels, Integrations, Shoots
 
 ### 4.9 Ways to collab
 Section title: **Ways to work together**

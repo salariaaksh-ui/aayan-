@@ -42,7 +42,6 @@ export const hero = {
   subMark: "made to be shared.",
   support:
     "1.8M+ reel views across his own reels and collabs, with Zudio already on the list.",
-  tag: "513K views · top reel",
 }
 
 export const stats = [
@@ -216,14 +215,11 @@ export const gallery: (ImageSlot & { optional?: boolean })[] = [
 
 export const about = {
   title: "Hi, I'm Aayan.",
-  body: "I make reels about everyday life, dating and the stuff everyone's thinking but nobody says, plus fits and the occasional trek. I split my time between Delhi and Jammu.",
-  bodyPlaceholder:
-    "[1–2 lines in Aayan's own words: what he studies or does, what he's into, what kind of brands he loves working with.]",
+  body: "I make reels about everyday life, glow-ups, and the fits that go with them — transitions, styling, and the occasional trek thrown in. Based between Delhi and Jammu. When I'm not filming, I'm probably re-editing a transition for the 10th time or planning the next trip. I love working with brands in fashion, grooming, and travel — the kind of stuff I'd actually use myself.",
   facts: [
     ["Based in", "Delhi / Jammu"],
-    ["Content", "humour · fits & transitions · travel"],
-    ["Languages", "[e.g. Hindi, English]"],
-    ["Available for", "reels, integrations, shoots"],
+    ["Content", "Transitions · Lifestyle · Fits"],
+    ["Available for", "Reels, Integrations, Shoots"],
   ],
 }
 
