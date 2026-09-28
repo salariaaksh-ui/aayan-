@@ -305,7 +305,7 @@ export default function Home() {
                 {site.management && (
                   <div>
                     <p className="mono !text-[11px] text-muted">Management</p>
-                    <p className="mt-2 text-muted">{site.management}</p>
+                    <p className="mt-2 text-[18px] font-semibold">{site.management}</p>
                   </div>
                 )}
               </div>

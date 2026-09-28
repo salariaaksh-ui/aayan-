@@ -20,13 +20,13 @@ export const site = {
   name: "Aayan",
   handle: "@aayann26_",
   instagram: "https://www.instagram.com/aayann26_/",
-  email: "aayangupta2604@gmail.com",
-  // Placeholder until filled. Set to null to hide the Management line.
-  management: "[MANAGER NAME + EMAIL, if collabs go through the manager]" as string | null,
+  email: "salariaaksh@gmail.com",
+  // Shown under "Management" in Contact. Set to null to hide the line.
+  management: "Aksh Salaria" as string | null,
   // Set to "/media-kit.pdf" (or a URL) to show the Download media kit button.
   mediaKit: null as string | null,
   // Formspree form ID (e.g. "xyzabcd"), from formspree.io — create the form with
-  // aayangupta2604@gmail.com. While null, the form shows the "email directly" error.
+  // salariaaksh@gmail.com. While null, the form shows the "email directly" error.
   formspreeId: null as string | null,
   statsDate: "28 Sep 2026",
   title: "Aayan | Creator for Humour, Fits & Travel",

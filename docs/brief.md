@@ -148,13 +148,13 @@ Form fields:
 - Type of collab (dropdown: Reel integration, Outfit/transition reel, Shoot, Other)
 - Budget range (optional dropdown: [owner to set ranges] / Prefer to discuss)
 - Message (required)
-- Submit button: **Send enquiry**. On success show "Thanks, we'll reply within 48 hours." On error show "That didn't send. Email aayangupta2604@gmail.com directly."
-- Send submissions to **aayangupta2604@gmail.com** using the platform's form handling, or Formspree/Web3Forms/Netlify Forms. Add a honeypot field against spam.
+- Submit button: **Send enquiry**. On success show "Thanks, we'll reply within 48 hours." On error show "That didn't send. Email salariaaksh@gmail.com directly."
+- Send submissions to **salariaaksh@gmail.com** using the platform's form handling, or Formspree/Web3Forms/Netlify Forms. Add a honeypot field against spam.
 
 Direct contact (right column):
-- Email: **aayangupta2604@gmail.com**, with a "Copy" button
+- Email: **salariaaksh@gmail.com**, with a "Copy" button
 - Instagram: **@aayann26_** → https://www.instagram.com/aayann26_/
-- Management: `[MANAGER NAME + EMAIL, if collabs go through the manager]`
+- Management: **Aksh Salaria** (collabs go through the manager; the email above is his)
 
 ### 4.11 Footer
 - Left: AAYAN wordmark and "© 2026 Aayan"
@@ -266,6 +266,6 @@ The site launches with placeholders for all of these (section 5A). Each one gets
 ## 8. Done when
 - All 11 sections render correctly on mobile and desktop, in light and dark mode.
 - Every reel opens (as an embed or on Instagram).
-- A test enquiry arrives at aayangupta2604@gmail.com.
+- A test enquiry arrives at salariaaksh@gmail.com.
 - Every number on the site matches this prompt exactly.
 - Every image slot shows its labelled placeholder with no layout shift, and replacing one `src` in the config swaps in a real photo.
