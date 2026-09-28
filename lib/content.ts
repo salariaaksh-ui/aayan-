@@ -41,7 +41,7 @@ export const hero = {
   sub: "Relatable humour, fits and travel,",
   subMark: "made to be shared.",
   support:
-    "1.8M+ reel views across his own reels and collabs, with Zudio and campus pages already on the list.",
+    "1.8M+ reel views across his own reels and collabs, with Zudio already on the list.",
   tag: "513K views · top reel",
 }
 
@@ -98,7 +98,7 @@ const cover = (n: number, alt: string): ImageSlot => ({
 
 export const reels: Reel[] = [
   {
-    chip: "Campus collab (with @amityfreshers)",
+    chip: "Humour",
     views: "513K",
     caption: "100% acceptance rate btw",
     likes: "9.4K",
@@ -107,7 +107,7 @@ export const reels: Reel[] = [
     engagement: "2.0%",
     bar: 100,
     url: "https://www.instagram.com/aayann26_/reel/Dbs2cMlJHxn/",
-    cover: cover(1, "Cover of Aayan's meme reel with @amityfreshers"),
+    cover: cover(1, "Cover of Aayan's meme reel"),
   },
   {
     chip: "Brand collab (Zudio)",
@@ -187,23 +187,6 @@ export const collabs = [
       src: null,
       alt: "Still from Aayan's Zudio reel",
       label: "ZUDIO COLLAB STILL · 4:5",
-      ratio: "4 / 5",
-    } as ImageSlot,
-  },
-  {
-    title: "@amityfreshers · meme reel",
-    chip: "CAMPUS PAGE",
-    stats: [
-      { value: "513K", label: "views" },
-      { value: "9.4K", label: "likes" },
-      { value: "569", label: "comments" },
-    ],
-    text: "His most-watched reel. A collab with a freshers page, it reached a large student audience.",
-    url: reels[0].url,
-    image: {
-      src: null,
-      alt: "Still from Aayan's @amityfreshers reel",
-      label: "AMITY COLLAB STILL · 4:5",
       ratio: "4 / 5",
     } as ImageSlot,
   },

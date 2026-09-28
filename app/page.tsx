@@ -80,8 +80,6 @@ export default function Home() {
               <p className="enter mt-10 hidden flex-wrap items-baseline gap-x-4 gap-y-1 border-t border-line pt-5 sm:flex" style={v({ "--d": "720ms" })}>
                 <span className="mono !text-[11px] text-muted">Collabs with</span>
                 <span className="display text-[20px]">Zudio</span>
-                <span aria-hidden className="text-muted">/</span>
-                <span className="display text-[20px]">@amityfreshers</span>
               </p>
             </div>
             <div className="relative mx-auto w-full max-w-[230px] sm:max-w-[420px] lg:max-w-none" data-parallax="-0.06">
@@ -181,8 +179,8 @@ export default function Home() {
 
         {/* 6 · Collabs */}
         <section id="collabs" aria-labelledby="collabs-title" className={`${wrap} ${section} reveal pt-0 lg:pt-0`}>
-          <SectionTitle id="collabs-title" eyebrow={`Brand & campus · ${collabs.length} collabs`}>Collabs so far</SectionTitle>
-          <ul className="mt-8 grid gap-4 sm:mt-12 sm:gap-5 lg:grid-cols-2">
+          <SectionTitle id="collabs-title" eyebrow={`Brand collabs · ${collabs.length}`}>Collabs so far</SectionTitle>
+          <ul className={`mt-8 grid gap-4 sm:mt-12 sm:gap-5 ${collabs.length > 1 ? "lg:grid-cols-2" : "max-w-[760px]"}`}>
             {collabs.map((c, i) => (
               <li key={c.title} style={v({ "--i": i })} className="card st group grid grid-cols-[clamp(76px,24vw,96px)_1fr] gap-x-4 gap-y-0 p-4 sm:grid-cols-[2fr_3fr] sm:grid-rows-[auto_1fr] sm:gap-x-5 sm:p-5">
                 <Photo slot={c.image} sizes="(min-width: 1024px) 200px, (min-width: 640px) 35vw, 96px" className="zoom sm:row-span-2" />
@@ -215,7 +213,7 @@ export default function Home() {
               </li>
             ))}
           </ul>
-          <p className="mt-8 text-muted">Open to brand, agency and campus-page collabs.</p>
+          <p className="mt-8 text-muted">Open to brand and agency collabs.</p>
         </section>
 
         {/* 7 · Gallery */}

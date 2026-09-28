@@ -28,7 +28,7 @@ Tone: confident, young, clean and credible. It should feel like a creator who is
 3. Numbers strip
 4. What he makes (3 content lanes)
 5. Featured reels (6 Instagram embeds)
-6. Brand & campus collabs
+6. Brand collabs
 7. Gallery (fits / portraits / travel photos)
 8. About
 9. Ways to collab
@@ -48,7 +48,7 @@ Tone: confident, young, clean and credible. It should feel like a creator who is
 - Eyebrow (small mono caps): `CREATOR · DELHI / JAMMU`
 - Headline (very large display type): **Aayan**
 - Subheadline: **Relatable humour, fits and travel, made to be shared.**
-- Supporting line: *1.8M+ reel views across his own reels and collabs, with Zudio and campus pages already on the list.*
+- Supporting line: *1.8M+ reel views across his own reels and collabs, with Zudio already on the list.*
 - Buttons: primary **Work with me** (to Contact); secondary **Watch reels** (to Featured reels).
 - Small floating tag overlapping the photo corner: `513K views · top reel`
 - Photo: `[HERO PHOTO: best portrait/fit shot, vertical]`
@@ -90,7 +90,7 @@ Under each card: a category chip, a big view count, the caption in quotes, a sma
 
 | # | Chip | Views | Caption | Likes · Comments · Shares | Engagement | Bar | URL |
 |---|---|---|---|---|---|---|---|
-| 1 | Campus collab (with @amityfreshers) | 513K | "100% acceptance rate btw" | 9.4K · 569 · 84 | 2.0% | 100% | https://www.instagram.com/aayann26_/reel/Dbs2cMlJHxn/ |
+| 1 | Humour | 513K | "100% acceptance rate btw" | 9.4K · 569 · 84 | 2.0% | 100% | https://www.instagram.com/aayann26_/reel/Dbs2cMlJHxn/ |
 | 2 | Brand collab (Zudio) | 310K | "School's out, drip's in" | 3.5K · 94 · 30 | 1.2% | 60% | https://www.instagram.com/aayann26_/reel/DdjWW9bsgkW/ |
 | 3 | Humour | 204K | "kya baat hai ❤️‍🔥" | 12.6K · 66 · 288 | 6.3% | 40% | https://www.instagram.com/aayann26_/reel/DXwTELrRX6L/ |
 | 4 | Humour | 129K | "lyrics don't match my appearance" | 4.7K · 36 · 192 | 3.8% | 25% | https://www.instagram.com/aayann26_/reel/DX0_xOdx4Zo/ |
@@ -99,21 +99,16 @@ Under each card: a category chip, a big view count, the caption in quotes, a sma
 
 The brand-collab chip is filled with the accent colour; the others are outlined.
 
-### 4.6 Brand & campus collabs
+### 4.6 Brand collabs
 Section title: **Collabs so far**
-Two large case cards side by side (stacked on mobile). Each has an image on the left (`[COLLAB STILL]`) and details on the right.
+One large case card with an image on the left (`[COLLAB STILL]`) and details on the right.
 
 **Card 1: Zudio · back-to-school reel** (chip: `BRAND`)
 - Stats row: **310K** views · **3.5K** likes · **94** comments
 - Text: Outfit reel posted as a collab on Zudio's own Instagram account. Commenters called him a fashion influencer.
 - Link: Watch the reel ↗ (reel #2 URL)
 
-**Card 2: @amityfreshers · meme reel** (chip: `CAMPUS PAGE`)
-- Stats row: **513K** views · **9.4K** likes · **569** comments
-- Text: His most-watched reel. A collab with a freshers page, it reached a large student audience.
-- Link: Watch the reel ↗ (reel #1 URL)
-
-Below the cards, a single line of muted text: *Open to brand, agency and campus-page collabs.*
+Below the cards, a single line of muted text: *Open to brand and agency collabs.*
 
 ### 4.7 Gallery
 Section title: **Fits, shoots & travel**
@@ -228,14 +223,13 @@ Build every image slot as a styled placeholder block so the site looks finished 
 | Slot ID | Where | Aspect ratio | Recommended size | Placeholder label | Alt text (preset) |
 |---|---|---|---|---|---|
 | hero | Hero, right side | 4:5 | 1200×1500 | HERO PHOTO · 4:5 | Aayan, portrait |
-| reel-1 | Featured reel 1 (Amity meme) | 9:16 | 1080×1920 | REEL COVER 1 · 9:16 | Cover of Aayan's meme reel with @amityfreshers |
+| reel-1 | Featured reel 1 (meme reel) | 9:16 | 1080×1920 | REEL COVER 1 · 9:16 | Cover of Aayan's meme reel |
 | reel-2 | Featured reel 2 (Zudio) | 9:16 | 1080×1920 | REEL COVER 2 · 9:16 | Cover of Aayan's Zudio collab reel |
 | reel-3 | Featured reel 3 | 9:16 | 1080×1920 | REEL COVER 3 · 9:16 | Cover of Aayan's humour reel |
 | reel-4 | Featured reel 4 | 9:16 | 1080×1920 | REEL COVER 4 · 9:16 | Cover of Aayan's humour reel |
 | reel-5 | Featured reel 5 | 9:16 | 1080×1920 | REEL COVER 5 · 9:16 | Cover of Aayan's outfit transition reel |
 | reel-6 | Featured reel 6 | 9:16 | 1080×1920 | REEL COVER 6 · 9:16 | Cover of Aayan's Kashmir trek reel |
 | collab-zudio | Collab card 1 | 4:5 | 1000×1250 | ZUDIO COLLAB STILL · 4:5 | Still from Aayan's Zudio reel |
-| collab-amity | Collab card 2 | 4:5 | 1000×1250 | AMITY COLLAB STILL · 4:5 | Still from Aayan's @amityfreshers reel |
 | gallery-1 | Gallery | 4:5 | 1200×1500 | GALLERY 1 · FIT | Aayan, outfit photo |
 | gallery-2 | Gallery | 1:1 | 1200×1200 | GALLERY 2 · PORTRAIT | Aayan, portrait |
 | gallery-3 | Gallery | 4:5 | 1200×1500 | GALLERY 3 · TRAVEL | Aayan on a trek in Kashmir |
@@ -267,7 +261,7 @@ The site launches with placeholders for all of these (section 5A). Each one gets
 - 1 hero portrait (vertical, high-res)
 - 1 about photo (candid)
 - 6 reel cover images (9:16), one per featured reel
-- 2 collab stills (Zudio reel, @amityfreshers reel)
+- 1 collab still (Zudio reel)
 - 6–9 gallery photos
 - Optional: media kit PDF, manager contact, full name, languages, 1–2 lines of bio in Aayan's words
 
