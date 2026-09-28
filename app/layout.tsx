@@ -3,13 +3,13 @@ import { Instrument_Sans, JetBrains_Mono } from "next/font/google"
 import localFont from "next/font/local"
 import "./globals.css"
 import { site } from "@/lib/content"
+import { siteUrl as url } from "@/lib/site-url"
 
 // Static Archivo instance (wdth 125, wght 900, latin): ~14KB vs ~89KB for the variable file — LCP.
 const archivo = localFont({ src: "./fonts/archivo-expanded-900.woff2", weight: "900", variable: "--font-archivo", display: "swap" })
 const instrument = Instrument_Sans({ subsets: ["latin"], variable: "--font-instrument", display: "swap" })
 const jetbrains = JetBrains_Mono({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-jetbrains", display: "swap", preload: false })
 
-const url = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3200"
 
 export const metadata: Metadata = {
   metadataBase: new URL(url),
