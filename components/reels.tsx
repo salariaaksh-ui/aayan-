@@ -79,7 +79,7 @@ export function Reels({ reels }: { reels: Reel[] }) {
     <>
       <ul className="relative -mx-4 flex snap-x snap-mandatory scroll-px-4 sm:scroll-px-0 gap-4 overflow-x-auto px-4 pb-4 sm:mx-0 sm:grid sm:grid-cols-2 sm:gap-6 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-3">
         {reels.map((r, i) => (
-          <li key={r.url} className="w-[76vw] max-w-[300px] shrink-0 snap-start sm:w-auto sm:max-w-none">
+          <li key={r.url} className="st w-[76vw] max-w-[300px] shrink-0 snap-start sm:w-auto sm:max-w-none" style={{ "--i": i } as React.CSSProperties}>
             <a
               href={r.url}
               target="_blank"
@@ -89,10 +89,12 @@ export function Reels({ reels }: { reels: Reel[] }) {
                 e.preventDefault()
                 open(r)
               }}
-              className="group relative block rounded-2xl"
+              className="tilt glare group relative block rounded-2xl active:scale-[0.98]"
+              data-tilt="9"
+              data-cursor="Play"
               aria-label={`Watch reel: “${r.caption}”, ${r.views} views`}
             >
-              <Photo slot={r.cover} sizes="(min-width: 1024px) 360px, (min-width: 640px) 45vw, 76vw" />
+              <Photo slot={r.cover} sizes="(min-width: 1024px) 360px, (min-width: 640px) 45vw, 76vw" className="zoom" />
               <span aria-hidden className="mono absolute left-3 top-3 rounded-full bg-bg px-2.5 py-1 !text-[11px] text-ink">
                 #{i + 1}
               </span>
@@ -101,7 +103,7 @@ export function Reels({ reels }: { reels: Reel[] }) {
                 {r.views}
               </span>
               <span className="absolute bottom-3 right-3">
-                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-accent text-on-accent transition-transform duration-200 group-hover:scale-105 motion-reduce:transition-none">
+                <span className="pulse flex h-12 w-12 items-center justify-center rounded-full bg-accent text-on-accent transition-transform duration-300 group-hover:scale-115 motion-reduce:transition-none">
                   <svg aria-hidden width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z" /></svg>
                 </span>
               </span>
@@ -114,7 +116,7 @@ export function Reels({ reels }: { reels: Reel[] }) {
                 {r.likes} likes · {r.comments} comments · {r.shares} shares · {r.engagement} engagement
               </p>
               <div className="mt-3 h-1 rounded-full bg-line" role="presentation">
-                <div className="h-full rounded-full bg-accent" style={{ width: `${r.bar}%` }} />
+                <div className="bar h-full rounded-full bg-accent" style={{ width: `${r.bar}%` }} />
               </div>
               <span className="sr-only">{i === 0 ? "Top reel" : `${r.bar}% of top reel views`}</span>
             </div>

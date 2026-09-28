@@ -11,10 +11,23 @@ const links = [
 
 export function Nav() {
   const [solid, setSolid] = useState(false)
+  const [hidden, setHidden] = useState(false)
   const menu = useRef<HTMLDialogElement>(null)
+  const bar = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    const onScroll = () => setSolid(window.scrollY > 24)
+    let last = window.scrollY
+    const onScroll = () => {
+      const y = window.scrollY
+      setSolid(y > 24)
+      // Hide while scrolling down, come back on any scroll up
+      if (Math.abs(y - last) > 6) {
+        setHidden(y > last && y > 320)
+        last = y
+      }
+      const max = document.documentElement.scrollHeight - innerHeight
+      bar.current?.style.setProperty("--p", String(max > 0 ? Math.min(y / max, 1) : 0))
+    }
     onScroll()
     window.addEventListener("scroll", onScroll, { passive: true })
     return () => window.removeEventListener("scroll", onScroll)
@@ -24,9 +37,9 @@ export function Nav() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-40 h-[var(--nav-h)] border-b transition-colors duration-200 ${
+      className={`nav-bar fixed inset-x-0 top-0 z-40 h-[var(--nav-h)] border-b ${
         solid ? "border-line bg-bg" : "border-transparent bg-transparent"
-      }`}
+      } ${hidden ? "nav-hidden" : ""}`}
     >
       <nav aria-label="Main" className="mx-auto flex h-full max-w-[1160px] items-center justify-between px-4 sm:px-5">
         <a href="#top" className="display text-2xl" aria-label="Aayan, back to top">
@@ -34,11 +47,11 @@ export function Nav() {
         </a>
         <div className="hidden items-center gap-7 md:flex">
           {links.map(([label, href]) => (
-            <a key={href} href={href} className="text-[15px] font-medium text-muted hover:text-ink">
+            <a key={href} href={href} className="draw pb-0.5 text-[15px] font-medium text-muted transition-colors hover:text-ink">
               {label}
             </a>
           ))}
-          <a href="#contact" className="btn btn-primary">Work with me</a>
+          <a href="#contact" className="btn btn-primary" data-magnetic>Work with me</a>
         </div>
         <button
           type="button"
@@ -52,6 +65,7 @@ export function Nav() {
           </svg>
         </button>
       </nav>
+      <div ref={bar} aria-hidden className="progress absolute inset-x-0 bottom-[-1px] h-[2px] bg-accent" />
 
       <dialog
         ref={menu}
@@ -68,15 +82,15 @@ export function Nav() {
           </button>
         </div>
         <ul className="flex flex-col gap-2 px-4 pt-6">
-          {links.map(([label, href]) => (
-            <li key={href}>
+          {links.map(([label, href], i) => (
+            <li key={href} className="menu-item" style={{ "--i": i } as React.CSSProperties}>
               <a href={href} onClick={close} className="display block py-3 text-[clamp(36px,11vw,48px)]">
                 {label}
               </a>
             </li>
           ))}
         </ul>
-        <div className="px-4 pt-8">
+        <div className="menu-item px-4 pt-8" style={{ "--i": links.length } as React.CSSProperties}>
           <a href="#contact" onClick={close} className="btn btn-primary w-full">Work with me</a>
         </div>
       </dialog>

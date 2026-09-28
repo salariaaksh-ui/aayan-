@@ -15,10 +15,11 @@ export function Gallery({ items }: { items: ImageSlot[] }) {
     <>
       <ul className="columns-2 gap-4 sm:gap-6 lg:columns-3">
         {items.map((slot, i) => (
-          <li key={slot.label} className="mb-4 break-inside-avoid sm:mb-6">
+          <li key={slot.label} className="st mb-4 break-inside-avoid sm:mb-6" style={{ "--i": i } as React.CSSProperties}>
             <button
               type="button"
-              className="group block w-full overflow-hidden rounded-2xl"
+              data-cursor="View"
+              className="group block w-full overflow-hidden rounded-2xl transition-transform active:scale-[0.97]"
               aria-label={`Open photo: ${slot.alt}`}
               onClick={() => {
                 setIdx(i)
