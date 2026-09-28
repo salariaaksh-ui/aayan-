@@ -458,6 +458,7 @@ html.cursor-label .cur-dot, html.cursor-link .cur-dot { opacity: 0; }
   /* Mobile menu items slide in */
   dialog[open] .menu-item { animation: enter-up 600ms cubic-bezier(0.2, 0.8, 0.2, 1) both; animation-delay: calc(80ms + var(--i) * 60ms); }
   dialog[open] { animation: fade 250ms ease-out; }
+  .lb-img { animation: fade 300ms ease-out; }
 
   .swipe-arr { animation: swipe 1.6s ease-in-out infinite; }
 }

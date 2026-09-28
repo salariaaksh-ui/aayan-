@@ -5,6 +5,10 @@ import Image from "next/image"
 import type { ImageSlot } from "@/lib/content"
 import { Photo } from "./photo"
 
+// "3 / 4" -> 3 and 4, for the lightbox image's intrinsic size
+const ratioW = (r: string) => parseFloat(r.split("/")[0]) || 1
+const ratioH = (r: string) => parseFloat(r.split("/")[1]) || 1
+
 /** "masonry": every photo in columns (the /gallery page). "row": a few equal tiles, swipeable on phones (home page). */
 export function Gallery({ items, variant = "masonry" }: { items: ImageSlot[]; variant?: "masonry" | "row" }) {
   const row = variant === "row"
@@ -12,6 +16,7 @@ export function Gallery({ items, variant = "masonry" }: { items: ImageSlot[]; va
   const [idx, setIdx] = useState(0)
   const current = items[idx]
   const go = (d: number) => setIdx((i) => (i + d + items.length) % items.length)
+  const touchX = useRef(0)
 
   return (
     <>
@@ -56,22 +61,34 @@ export function Gallery({ items, variant = "masonry" }: { items: ImageSlot[]; va
           if (e.key === "ArrowLeft") go(-1)
         }}
         onClick={(e) => e.target === e.currentTarget && dialog.current?.close()}
-        className="m-auto w-[min(640px,calc(100vw-32px))] bg-transparent p-0 text-ink"
+        onTouchStart={(e) => (touchX.current = e.touches[0].clientX)}
+        onTouchEnd={(e) => {
+          const dx = e.changedTouches[0].clientX - touchX.current
+          if (Math.abs(dx) > 50) go(dx < 0 ? 1 : -1)
+        }}
+        className="m-auto w-fit max-w-[calc(100vw-24px)] overflow-visible bg-transparent p-0 text-ink"
       >
-        <div className="relative rounded-2xl bg-surface p-3">
+        {/* Frame hugs the photo: the image keeps its own ratio and scales to fit the screen */}
+        <div className="rounded-2xl bg-surface p-2 sm:p-3">
           {current.src ? (
-            <div className="relative overflow-hidden rounded-2xl" style={{ aspectRatio: current.ratio, maxHeight: "78dvh" }}>
-              <Image src={current.src} alt={current.alt} fill sizes="640px" className="object-contain" />
-            </div>
+            <Image
+              key={current.src}
+              src={current.src}
+              alt={current.alt}
+              width={960}
+              height={Math.round((960 * ratioH(current.ratio)) / ratioW(current.ratio))}
+              sizes="(min-width: 640px) 640px, 100vw"
+              className="lb-img mx-auto block h-auto max-h-[calc(100dvh-136px)] w-auto max-w-[calc(100vw-40px)] rounded-xl sm:max-w-[min(640px,calc(100vw-48px))]"
+            />
           ) : (
-            <Photo slot={current} className="mx-auto max-h-[78dvh]" />
+            <Photo slot={current} className="mx-auto w-[min(420px,calc(100vw-40px))]" />
           )}
-          <div className="mt-3 flex items-center justify-between">
-            <button type="button" className="btn btn-secondary" onClick={() => go(-1)} aria-label="Previous photo">←</button>
+          <div className="mt-2 flex items-center justify-between gap-2 sm:mt-3">
+            <button type="button" className="btn btn-secondary !px-4" onClick={() => go(-1)} aria-label="Previous photo">←</button>
             <span className="mono num !text-[11px] text-muted" aria-live="polite">{idx + 1} / {items.length}</span>
             <div className="flex gap-2">
-              <button type="button" className="btn btn-secondary" onClick={() => go(1)} aria-label="Next photo">→</button>
-              <button type="button" className="btn btn-primary" onClick={() => dialog.current?.close()}>Close</button>
+              <button type="button" className="btn btn-secondary !px-4" onClick={() => go(1)} aria-label="Next photo">→</button>
+              <button type="button" className="btn btn-primary !px-4" onClick={() => dialog.current?.close()}>Close</button>
             </div>
           </div>
         </div>

@@ -129,13 +129,20 @@ export function Fx() {
       resetMag()
     }
     const onDown = () => ring.animate([{ scale: 1 }, { scale: 0.8 }, { scale: 1 }], { duration: 300 })
+    // A click can open a dialog over the hovered element; drop the label until the pointer moves again
+    const onClick = () => {
+      root.classList.remove("cursor-label", "cursor-link")
+      ring.textContent = ""
+    }
 
     addEventListener("pointermove", onMove, { passive: true })
     addEventListener("pointerdown", onDown, { passive: true })
+    addEventListener("click", onClick)
     document.addEventListener("pointerleave", onLeave)
     cleanups.push(() => {
       removeEventListener("pointermove", onMove)
       removeEventListener("pointerdown", onDown)
+      removeEventListener("click", onClick)
       document.removeEventListener("pointerleave", onLeave)
       cancelAnimationFrame(raf)
       ring.remove()
