@@ -93,8 +93,15 @@ export function Reels({ reels }: { reels: Reel[] }) {
               aria-label={`Watch reel: “${r.caption}”, ${r.views} views`}
             >
               <Photo slot={r.cover} sizes="(min-width: 1024px) 360px, (min-width: 640px) 45vw, 72vw" />
-              <span className="absolute inset-0 flex items-center justify-center">
-                <span className="flex h-14 w-14 items-center justify-center rounded-full bg-ink text-bg transition-transform duration-200 group-hover:scale-105 motion-reduce:transition-none">
+              <span aria-hidden className="mono absolute left-3 top-3 rounded-full bg-bg px-2.5 py-1 !text-[11px] text-ink">
+                #{i + 1}
+              </span>
+              <span aria-hidden className="mono num absolute bottom-3 left-3 flex items-center gap-1.5 rounded-full bg-ink px-3 py-1.5 !text-[12px] text-bg">
+                <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><path d="M6 4v16l14-8z" /></svg>
+                {r.views}
+              </span>
+              <span className="absolute bottom-3 right-3">
+                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-accent text-on-accent transition-transform duration-200 group-hover:scale-105 motion-reduce:transition-none">
                   <svg aria-hidden width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z" /></svg>
                 </span>
               </span>

@@ -27,11 +27,14 @@ const jsonLd = {
   sameAs: [site.instagram],
 }
 
-function SectionTitle({ children, id }: { children: React.ReactNode; id?: string }) {
+function SectionTitle({ children, id, eyebrow }: { children: React.ReactNode; id?: string; eyebrow: string }) {
   return (
-    <h2 id={id} className="display text-[36px] sm:text-[44px]">
-      {children}
-    </h2>
+    <div className="border-t border-ink pt-5">
+      <p className="mono text-muted">{eyebrow}</p>
+      <h2 id={id} className="display mt-4 max-w-[18ch] text-[38px] sm:text-[52px]">
+        {children}
+      </h2>
+    </div>
   )
 }
 
@@ -45,58 +48,88 @@ export default function Home() {
         <section id="top" aria-labelledby="hero-title" className={`${wrap} pt-[calc(var(--nav-h)+24px)] pb-[72px] lg:pt-[calc(var(--nav-h)+56px)] lg:pb-[120px]`}>
           <div className="flex flex-col-reverse gap-9 lg:grid lg:grid-cols-[55fr_45fr] lg:items-center lg:gap-12">
             <div>
-              <p className="mono text-muted">{hero.eyebrow}</p>
-              <h1 id="hero-title" className="display mt-3 text-[60px] sm:text-[96px] lg:text-[132px]">
+              <p className="mono flex items-center gap-3 text-muted">
+                <span aria-hidden className="h-px w-8 bg-ink" />
+                {hero.eyebrow}
+              </p>
+              <h1 id="hero-title" className="display mt-4 text-[64px] sm:text-[112px] lg:text-[150px]">
                 {hero.headline}
               </h1>
-              <p className="mt-6 max-w-[22ch] text-[24px] font-semibold leading-snug sm:text-[28px]">
+              <p className="mt-6 max-w-[22ch] text-[24px] font-semibold leading-snug sm:text-[30px]">
                 {hero.sub} <span className="mark">{hero.subMark}</span>
               </p>
-              <p className="mt-4 max-w-[48ch] text-muted">{hero.support}</p>
+              <p className="mt-4 max-w-[46ch] text-muted">{hero.support}</p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a href="#contact" className="btn btn-primary">Work with me</a>
                 <a href="#reels" className="btn btn-secondary">Watch reels</a>
               </div>
+              <p className="mt-10 hidden flex-wrap items-baseline gap-x-4 gap-y-1 border-t border-line pt-5 sm:flex">
+                <span className="mono !text-[11px] text-muted">Collabs with</span>
+                <span className="display text-[20px]">Zudio</span>
+                <span aria-hidden className="text-muted">/</span>
+                <span className="display text-[20px]">@amityfreshers</span>
+              </p>
             </div>
             <div className="relative mx-auto w-full max-w-[250px] sm:max-w-[420px] lg:max-w-none">
               <Photo slot={images.hero} priority sizes="(min-width: 1024px) 45vw, 420px" className="shadow-[0_30px_60px_-30px_rgb(21_23_28/0.45)]" />
-              <p className="mono num absolute -bottom-4 left-4 rounded-full border border-line bg-surface px-4 py-2 !text-[12px] text-ink lg:-left-6">
+              <p className="sticker mono num absolute -bottom-5 left-3 !text-[12px] lg:-left-8">
+                <svg aria-hidden width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M6 4v16l14-8z" /></svg>
                 {hero.tag}
+              </p>
+              <p aria-hidden className="mono absolute -right-2 top-6 hidden origin-top-right -rotate-90 !text-[11px] text-muted lg:block">
+                {site.handle}
               </p>
             </div>
           </div>
         </section>
 
+        {/* Signature: caption tape — his real reel captions, the lines people share */}
+        <div aria-hidden className="tape overflow-hidden border-y border-ink bg-ink py-4 text-bg">
+          <div className="tape-track flex w-max">
+            {[0, 1].map((k) => (
+              <div key={k} className="flex shrink-0 items-center">
+                {reels.map((r) => (
+                  <span key={r.url} className="flex items-center">
+                    <span className="display whitespace-nowrap px-6 text-[22px] sm:text-[28px]">“{r.caption}”</span>
+                    <span className="mono num whitespace-nowrap !text-[11px] opacity-70">▶ {r.views}</span>
+                    <span className="px-6 text-accent">✦</span>
+                  </span>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* 3 · Numbers strip */}
         <section aria-label="Reel numbers" className="reveal border-y border-line bg-surface">
-          <div className={`${wrap} py-12 lg:py-16`}>
-            <dl className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-6 lg:grid-cols-5">
+          <div className={`${wrap} py-12 lg:py-20`}>
+            <dl className="stats grid grid-cols-2 gap-y-10 sm:grid-cols-6 lg:grid-cols-[1.1fr_1fr_0.7fr_0.9fr_1.2fr]">
               {stats.map((s, i) => (
                 <div
                   key={s.label}
-                  className={`flex flex-col-reverse ${i < 3 ? "sm:col-span-2" : "sm:col-span-3"} lg:col-span-1 ${i === 4 ? "col-span-2 sm:col-span-3" : ""}`}
+                  className={`flex flex-col-reverse pr-4 sm:px-5 sm:first:pl-0 lg:last:pr-0 ${i < 3 ? "sm:col-span-2" : "sm:col-span-3"} lg:col-span-1 ${i === 4 ? "col-span-2 sm:col-span-3" : ""}`}
                 >
-                  <dt className="mono mt-2 text-muted">{s.label}</dt>
-                  <dd className="display text-[44px] sm:text-[52px]">
+                  <dt className="mono mt-3 max-w-[16ch] text-muted">{s.label}</dt>
+                  <dd className={`display text-[44px] sm:text-[56px] lg:text-[42px] xl:text-[46px] ${i === 0 ? "text-accent" : ""}`}>
                     <CountUp value={s.value} />
                   </dd>
                 </div>
               ))}
             </dl>
-            <p className="mt-10 text-[14px] text-muted">Public reel counts as of {site.statsDate}.</p>
+            <p className="mono mt-12 !text-[11px] text-muted">Public reel counts as of {site.statsDate}</p>
           </div>
         </section>
 
         {/* 4 · Content lanes */}
         <section aria-labelledby="lanes-title" className={`${wrap} ${section} reveal`}>
-          <SectionTitle id="lanes-title">Three kinds of content</SectionTitle>
-          <ul className="mt-10 grid gap-5 md:grid-cols-3">
+          <SectionTitle id="lanes-title" eyebrow="What he makes">Three kinds of content</SectionTitle>
+          <ul className="mt-12 grid gap-5 md:grid-cols-3">
             {lanes.map((l) => (
-              <li key={l.title} className="card flex flex-col p-6">
-                <p className="mono !text-[11px] text-accent">{l.label}</p>
-                <h3 className="mt-3 text-[20px] font-semibold">{l.title}</h3>
-                <p className="mt-2 flex-1 text-[16px] text-muted">{l.text}</p>
-                <p className="mono num mt-6 border-t border-line pt-4 !text-[12px]">{l.stat}</p>
+              <li key={l.title} className="card flex flex-col p-6 lg:p-8">
+                <span className="chip mono self-start !text-[11px]">{l.label}</span>
+                <h3 className="display mt-8 text-[28px] leading-none lg:text-[32px]">{l.title}</h3>
+                <p className="mt-4 flex-1 text-[16px] text-muted">{l.text}</p>
+                <p className="mono num mt-8 border-t border-line pt-4 !text-[12px]">{l.stat}</p>
               </li>
             ))}
           </ul>
@@ -104,24 +137,27 @@ export default function Home() {
 
         {/* 5 · Featured reels */}
         <section id="reels" aria-labelledby="reels-title" className={`${wrap} ${section} reveal pt-0 lg:pt-0`}>
-          <SectionTitle id="reels-title">Reels that show the range</SectionTitle>
-          <p className="mt-3 text-muted">Tap any reel to watch it here.</p>
-          <div className="mt-10">
+          <SectionTitle id="reels-title" eyebrow={`Featured · ${reels.length} reels`}>Reels that show the range</SectionTitle>
+          <p className="mt-4 text-muted">Tap any reel to watch it here.</p>
+          <div className="mt-12">
             <Reels reels={reels} />
           </div>
         </section>
 
         {/* 6 · Collabs */}
         <section id="collabs" aria-labelledby="collabs-title" className={`${wrap} ${section} reveal pt-0 lg:pt-0`}>
-          <SectionTitle id="collabs-title">Collabs so far</SectionTitle>
-          <ul className="mt-10 grid gap-5 lg:grid-cols-2">
+          <SectionTitle id="collabs-title" eyebrow={`Brand & campus · ${collabs.length} collabs`}>Collabs so far</SectionTitle>
+          <ul className="mt-12 grid gap-5 lg:grid-cols-2">
             {collabs.map((c) => (
               <li key={c.title} className="card grid grid-cols-1 gap-5 p-4 sm:grid-cols-[2fr_3fr] sm:p-5">
                 <Photo slot={c.image} sizes="(min-width: 1024px) 200px, (min-width: 640px) 35vw, 100vw" />
                 <div className="flex flex-col">
-                  <span className="chip mono self-start !text-[11px]">{c.chip}</span>
-                  <h3 className="mt-3 text-[20px] font-semibold">{c.title}</h3>
-                  <dl className="mt-4 flex gap-5">
+                  <span className={`chip mono self-start !text-[11px] ${c.chip === "BRAND" ? "chip-filled" : ""}`}>{c.chip}</span>
+                  <h3 className="mt-5">
+                    <span className={`display block leading-none ${c.title.split(" · ")[0].length > 10 ? "text-[26px] sm:text-[30px]" : "text-[34px] sm:text-[40px]"}`}>{c.title.split(" · ")[0]}</span>
+                    <span className="mt-2 block text-[16px] font-semibold text-muted">{c.title.split(" · ")[1]}</span>
+                  </h3>
+                  <dl className="mt-6 flex gap-6 border-y border-line py-4">
                     {c.stats.map((s) => (
                       <div key={s.label} className="flex flex-col-reverse">
                         <dt className="mono !text-[11px] text-muted">{s.label}</dt>
@@ -147,8 +183,8 @@ export default function Home() {
 
         {/* 7 · Gallery */}
         <section aria-labelledby="gallery-title" className={`${wrap} ${section} reveal pt-0 lg:pt-0`}>
-          <SectionTitle id="gallery-title">Fits, shoots &amp; travel</SectionTitle>
-          <div className="mt-10">
+          <SectionTitle id="gallery-title" eyebrow="Gallery">Fits, shoots &amp; travel</SectionTitle>
+          <div className="mt-12">
             <Gallery items={galleryItems} />
           </div>
         </section>
@@ -158,7 +194,7 @@ export default function Home() {
           <div className="grid gap-10 md:grid-cols-[5fr_7fr] md:items-center lg:gap-16">
             <Photo slot={images.about} sizes="(min-width: 768px) 40vw, 100vw" className="mx-auto w-full max-w-[420px]" />
             <div>
-              <SectionTitle id="about-title">{about.title}</SectionTitle>
+              <SectionTitle id="about-title" eyebrow="About">{about.title}</SectionTitle>
               <p className="mt-6 max-w-[60ch] text-[18px]">
                 {about.body} <span className="text-muted">{about.bodyPlaceholder}</span>
               </p>
@@ -176,14 +212,14 @@ export default function Home() {
 
         {/* 9 · Ways to collab */}
         <section aria-labelledby="services-title" className={`${wrap} ${section} reveal pt-0 lg:pt-0`}>
-          <SectionTitle id="services-title">Ways to work together</SectionTitle>
-          <ul className="mt-10 grid gap-5 sm:grid-cols-2">
+          <SectionTitle id="services-title" eyebrow={`Formats · ${services.length} ways`}>Ways to work together</SectionTitle>
+          <ul className="mt-12 grid gap-5 sm:grid-cols-2">
             {services.map((s) => (
-              <li key={s.mark} className="card p-6">
-                <span className="mono flex h-8 w-8 items-center justify-center rounded-full border border-line !text-[12px]" aria-hidden>
+              <li key={s.mark} className="card grid grid-cols-[auto_1fr] gap-x-6 p-6 lg:p-8">
+                <span className="display row-span-2 text-[64px] leading-[0.8] text-accent lg:text-[80px]" aria-hidden>
                   {s.mark}
                 </span>
-                <h3 className="mt-4 text-[20px] font-semibold">
+                <h3 className="text-[22px] font-semibold">
                   <span className="sr-only">{s.mark}. </span>
                   {s.title}
                 </h3>
@@ -202,11 +238,11 @@ export default function Home() {
         {/* 10 · Contact — inverted block */}
         <section id="contact" aria-labelledby="contact-title" className="inverted bg-bg text-ink">
           <div className={`${wrap} ${section}`}>
-            <p className="mono text-muted">COLLAB ENQUIRIES</p>
-            <h2 id="contact-title" className="display mt-4 max-w-[16ch] text-[40px] sm:text-[60px] lg:text-[72px]">
-              Let&apos;s make something people share.
+            <p className="mono flex items-center gap-3 text-muted"><span aria-hidden className="h-px w-8 bg-ink" />COLLAB ENQUIRIES</p>
+            <h2 id="contact-title" className="display mt-5 max-w-[14ch] text-[44px] sm:text-[72px] lg:text-[96px]">
+              Let&apos;s make something <span className="mark-contact">people share.</span>
             </h2>
-            <div className="mt-12 grid gap-12 lg:grid-cols-[3fr_2fr] lg:gap-16">
+            <div className="mt-14 grid gap-12 lg:grid-cols-[3fr_2fr] lg:gap-16">
               <ContactForm />
               <div className="space-y-8 lg:border-l lg:border-line lg:pl-12">
                 <div>
@@ -237,8 +273,11 @@ export default function Home() {
       </main>
 
       {/* 11 · Footer */}
-      <footer className="border-t border-line">
-        <div className={`${wrap} grid gap-6 py-10 md:grid-cols-[1fr_2fr_1fr] md:items-center`}>
+      <footer>
+        <div className={`${wrap} overflow-hidden pt-16`} aria-hidden>
+          <p className="display select-none whitespace-nowrap text-center text-[23vw] leading-[0.8] text-line lg:text-[268px]">AAYAN</p>
+        </div>
+        <div className={`${wrap} grid gap-6 border-t border-line py-10 md:grid-cols-[1fr_2fr_1fr] md:items-center`}>
           <div>
             <p className="display text-xl">AAYAN</p>
             <p className="mt-1 text-[14px] text-muted">© 2026 Aayan</p>

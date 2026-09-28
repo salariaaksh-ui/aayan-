@@ -177,3 +177,42 @@ p { text-wrap: pretty; }
 }
 
 dialog::backdrop { background: rgb(0 0 0 / 0.7); }
+
+/* ── Design pass 2 ── */
+
+/* Story-sticker tag on the hero photo */
+.sticker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--on-accent);
+  transform: rotate(-4deg);
+  box-shadow: 0 0 0 4px var(--bg);
+}
+
+/* Contact headline: marker underline (text is light-on-dark here, so no fill) */
+.mark-contact {
+  text-decoration: underline;
+  text-decoration-color: var(--highlight);
+  text-decoration-thickness: 0.12em;
+  text-underline-offset: 0.12em;
+}
+
+/* Numbers: hairline column dividers from tablet up */
+@media (min-width: 640px) {
+  .stats > div + div { border-left: 1px solid var(--line); }
+  .stats > div:nth-child(4) { border-left: 0; padding-left: 0; }
+}
+@media (min-width: 1024px) {
+  .stats > div:nth-child(4) { border-left: 1px solid var(--line); padding-left: 1.25rem; }
+}
+
+/* Signature: caption tape */
+@media (prefers-reduced-motion: no-preference) {
+  .tape-track { animation: tape 55s linear infinite; }
+  .tape:hover .tape-track { animation-play-state: paused; }
+}
+@keyframes tape { to { transform: translateX(-50%); } }
