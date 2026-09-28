@@ -37,7 +37,9 @@ export const site = {
 export const hero = {
   eyebrow: "CREATOR · DELHI / JAMMU",
   headline: "Aayan",
-  sub: "College humour, fits and travel, made to be shared.",
+  // Rendered as: sub + highlighted subMark
+  sub: "College humour, fits and travel,",
+  subMark: "made to be shared.",
   support:
     "1.8M+ reel views across his own reels and collabs, with Zudio and campus pages already on the list.",
   tag: "513K views · top reel",

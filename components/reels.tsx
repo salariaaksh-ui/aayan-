@@ -104,7 +104,7 @@ export function Reels({ reels }: { reels: Reel[] }) {
               <p className="display num mt-3 text-4xl">{r.views}</p>
               <p className="mt-2 text-[16px]">“{r.caption}”</p>
               <p className="mono num mt-2 !text-[11px] text-muted">
-                {r.likes} likes · {r.comments} comments · {r.shares} shares · {r.engagement}
+                {r.likes} likes · {r.comments} comments · {r.shares} shares · {r.engagement} engagement
               </p>
               <div className="mt-3 h-1 rounded-full bg-line" role="presentation">
                 <div className="h-full rounded-full bg-accent" style={{ width: `${r.bar}%` }} />

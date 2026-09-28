@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og"
 import { readFile } from "node:fs/promises"
 import { join } from "node:path"
+import { stats } from "@/lib/content"
 
 export const alt = "Aayan, creator portfolio"
 export const size = { width: 1200, height: 630 }
@@ -25,7 +26,7 @@ export default async function OG() {
         }}
       >
         <div style={{ fontSize: 190, lineHeight: 1, letterSpacing: "0.01em" }}>AAYAN</div>
-        <div style={{ fontSize: 56, marginTop: 24, color: "#2B45F0" }}>1.8M+ reel views</div>
+        <div style={{ fontSize: 56, marginTop: 24, color: "#2B45F0" }}>{`${stats[0].value} reel views`}</div>
       </div>
     ),
     { ...size, fonts: [{ name: "Archivo", data: font, weight: 900, style: "normal" }] }

@@ -50,7 +50,7 @@ export default function Home() {
                 {hero.headline}
               </h1>
               <p className="mt-6 max-w-[22ch] text-[24px] font-semibold leading-snug sm:text-[28px]">
-                College humour, fits and travel, <span className="mark">made to be shared.</span>
+                {hero.sub} <span className="mark">{hero.subMark}</span>
               </p>
               <p className="mt-4 max-w-[48ch] text-muted">{hero.support}</p>
               <div className="mt-8 flex flex-wrap gap-3">

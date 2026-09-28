@@ -84,11 +84,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Display type: Archivo expanded (wdth axis) */
+/* Display type: Archivo Expanded Black (static wdth-125 instance, app/fonts) */
 .display {
   font-family: var(--font-display);
-  font-stretch: 125%;
-  font-weight: 850;
+  font-weight: 900;
   letter-spacing: -0.02em;
   line-height: 0.95;
 }
