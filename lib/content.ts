@@ -29,16 +29,16 @@ export const site = {
   // aayangupta2604@gmail.com. While null, the form shows the "email directly" error.
   formspreeId: null as string | null,
   statsDate: "28 Sep 2026",
-  title: "Aayan | Creator for College Humour, Fits & Travel",
+  title: "Aayan | Creator for Humour, Fits & Travel",
   description:
-    "Aayan (@aayann26_) is a Delhi/Jammu creator making relatable college humour, outfit reels and travel content. 1.8M+ reel views. Collab enquiries welcome.",
+    "Aayan (@aayann26_) is a Delhi/Jammu creator making relatable humour, outfit reels and travel content. 1.8M+ reel views. Collab enquiries welcome.",
 }
 
 export const hero = {
   eyebrow: "CREATOR · DELHI / JAMMU",
   headline: "Aayan",
   // Rendered as: sub + highlighted subMark
-  sub: "College humour, fits and travel,",
+  sub: "Relatable humour, fits and travel,",
   subMark: "made to be shared.",
   support:
     "1.8M+ reel views across his own reels and collabs, with Zudio and campus pages already on the list.",
@@ -57,7 +57,7 @@ export const lanes = [
   {
     label: "REACH",
     title: "Relatable humour",
-    text: "Text-overlay reels about college, dating and roasting himself. People tag friends and share them, so they travel well past his followers.",
+    text: "Text-overlay reels about everyday life, dating and roasting himself. People tag friends and share them, so they travel well past his followers.",
     stat: "~178K avg views · 6 reels",
   },
   {
@@ -107,7 +107,7 @@ export const reels: Reel[] = [
     engagement: "2.0%",
     bar: 100,
     url: "https://www.instagram.com/aayann26_/reel/Dbs2cMlJHxn/",
-    cover: cover(1, "Cover of Aayan's college meme reel with @amityfreshers"),
+    cover: cover(1, "Cover of Aayan's meme reel with @amityfreshers"),
   },
   {
     chip: "Brand collab (Zudio)",
@@ -191,7 +191,7 @@ export const collabs = [
     } as ImageSlot,
   },
   {
-    title: "@amityfreshers · college meme",
+    title: "@amityfreshers · meme reel",
     chip: "CAMPUS PAGE",
     stats: [
       { value: "513K", label: "views" },
@@ -224,12 +224,12 @@ export const gallery: (ImageSlot & { optional?: boolean })[] = [
   { src: null, alt: "Aayan, travel photo", label: "GALLERY 6 · TRAVEL", ratio: "4 / 5" },
   { src: null, alt: "Aayan, outfit photo", label: "GALLERY 7 · FIT", ratio: "3 / 4", optional: true },
   { src: null, alt: "Aayan, candid photo", label: "GALLERY 8 · CANDID", ratio: "1 / 1", optional: true },
-  { src: null, alt: "Aayan at college", label: "GALLERY 9 · COLLEGE", ratio: "4 / 5", optional: true },
+  { src: null, alt: "Aayan, candid", label: "GALLERY 9 · CANDID", ratio: "4 / 5", optional: true },
 ]
 
 export const about = {
   title: "Hi, I'm Aayan.",
-  body: "I make reels about college life, dating and the stuff everyone's thinking but nobody says, plus fits and the occasional trek. I split my time between Delhi and Jammu.",
+  body: "I make reels about everyday life, dating and the stuff everyone's thinking but nobody says, plus fits and the occasional trek. I split my time between Delhi and Jammu.",
   bodyPlaceholder:
     "[1–2 lines in Aayan's own words: what he studies or does, what he's into, what kind of brands he loves working with.]",
   facts: [
@@ -244,7 +244,7 @@ export const services = [
   {
     mark: "A",
     title: "Humour integration",
-    text: "Your product inside a relatable college or dating skit, in the format that gets his most shares.",
+    text: "Your product inside a relatable everyday or dating skit, in the format that gets his most shares.",
   },
   {
     mark: "B",

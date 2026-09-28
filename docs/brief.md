@@ -6,7 +6,7 @@ Copy everything below the line into AI Kaarigar.
 
 ## 1. What to build
 
-Build a professional, photo-led, single-page portfolio website for **Aayan**, an Instagram creator (**@aayann26_**) based between **Delhi and Jammu**, India. He makes relatable college/dating humour reels, outfit and transition reels, and travel content.
+Build a professional, photo-led, single-page portfolio website for **Aayan**, an Instagram creator (**@aayann26_**) based between **Delhi and Jammu**, India. He makes relatable everyday/dating humour reels, outfit and transition reels, and travel content.
 
 The site's job is to get **brands, influencer-marketing agencies and campus/meme pages** to contact him for paid collabs. A brand manager should understand within 10 seconds who he is, how far his content reaches, what he's done with brands, and how to contact him.
 
@@ -47,7 +47,7 @@ Tone: confident, young, clean and credible. It should feel like a creator who is
 - Layout: split screen on desktop. Left 55% is text; right 45% is a tall portrait photo (4:5) with slightly rounded corners. On mobile, stack the photo above the text.
 - Eyebrow (small mono caps): `CREATOR · DELHI / JAMMU`
 - Headline (very large display type): **Aayan**
-- Subheadline: **College humour, fits and travel, made to be shared.**
+- Subheadline: **Relatable humour, fits and travel, made to be shared.**
 - Supporting line: *1.8M+ reel views across his own reels and collabs, with Zudio and campus pages already on the list.*
 - Buttons: primary **Work with me** (to Contact); secondary **Watch reels** (to Featured reels).
 - Small floating tag overlapping the photo corner: `513K views · top reel`
@@ -71,7 +71,7 @@ Section title: **Three kinds of content**
 Three cards side by side (stacked on mobile). Each card has a small accent-coloured label, a title, 1–2 lines of text and a mono stat line at the bottom.
 
 1. Label `REACH` · **Relatable humour**
-   Text-overlay reels about college, dating and roasting himself. People tag friends and share them, so they travel well past his followers.
+   Text-overlay reels about everyday life, dating and roasting himself. People tag friends and share them, so they travel well past his followers.
    Stat: `~178K avg views · 6 reels`
 2. Label `FASHION & GROOMING` · **Fits & transitions**
    Walk-ins, glow-ups and outfit transitions. The natural home for fashion, grooming and gym brands.
@@ -108,7 +108,7 @@ Two large case cards side by side (stacked on mobile). Each has an image on the 
 - Text: Outfit reel posted as a collab on Zudio's own Instagram account. Commenters called him a fashion influencer.
 - Link: Watch the reel ↗ (reel #2 URL)
 
-**Card 2: @amityfreshers · college meme** (chip: `CAMPUS PAGE`)
+**Card 2: @amityfreshers · meme reel** (chip: `CAMPUS PAGE`)
 - Stats row: **513K** views · **9.4K** likes · **569** comments
 - Text: His most-watched reel. A collab with a freshers page, it reached a large student audience.
 - Link: Watch the reel ↗ (reel #1 URL)
@@ -123,7 +123,7 @@ A masonry grid of 6–9 photos (3 columns desktop, 2 mobile), with slight roundi
 Two columns: a photo on the left (`[ABOUT PHOTO: casual/candid]`), text on the right.
 Title: **Hi, I'm Aayan.**
 Body (keep the placeholders visible until they're filled):
-> I make reels about college life, dating and the stuff everyone's thinking but nobody says, plus fits and the occasional trek. I split my time between Delhi and Jammu. [1–2 lines in Aayan's own words: what he studies or does, what he's into, what kind of brands he loves working with.]
+> I make reels about everyday life, dating and the stuff everyone's thinking but nobody says, plus fits and the occasional trek. I split my time between Delhi and Jammu. [1–2 lines in Aayan's own words: what he studies or does, what he's into, what kind of brands he loves working with.]
 
 Small facts list in mono:
 - Based in: Delhi / Jammu
@@ -135,7 +135,7 @@ Small facts list in mono:
 Section title: **Ways to work together**
 A row of three service tiles with a small letter marker (A, B, C) and a hairline border.
 
-- **A. Humour integration:** Your product inside a relatable college or dating skit, in the format that gets his most shares.
+- **A. Humour integration:** Your product inside a relatable everyday or dating skit, in the format that gets his most shares.
 - **B. Outfit & transition reels:** For fashion, grooming and gym brands. Walk-ins, glow-ups and styling transitions.
 - **C. Shoots:** Photo and reel shoots for your own channels.
 
@@ -228,7 +228,7 @@ Build every image slot as a styled placeholder block so the site looks finished 
 | Slot ID | Where | Aspect ratio | Recommended size | Placeholder label | Alt text (preset) |
 |---|---|---|---|---|---|
 | hero | Hero, right side | 4:5 | 1200×1500 | HERO PHOTO · 4:5 | Aayan, portrait |
-| reel-1 | Featured reel 1 (Amity meme) | 9:16 | 1080×1920 | REEL COVER 1 · 9:16 | Cover of Aayan's college meme reel with @amityfreshers |
+| reel-1 | Featured reel 1 (Amity meme) | 9:16 | 1080×1920 | REEL COVER 1 · 9:16 | Cover of Aayan's meme reel with @amityfreshers |
 | reel-2 | Featured reel 2 (Zudio) | 9:16 | 1080×1920 | REEL COVER 2 · 9:16 | Cover of Aayan's Zudio collab reel |
 | reel-3 | Featured reel 3 | 9:16 | 1080×1920 | REEL COVER 3 · 9:16 | Cover of Aayan's humour reel |
 | reel-4 | Featured reel 4 | 9:16 | 1080×1920 | REEL COVER 4 · 9:16 | Cover of Aayan's humour reel |
@@ -244,7 +244,7 @@ Build every image slot as a styled placeholder block so the site looks finished 
 | gallery-6 | Gallery | 4:5 | 1200×1500 | GALLERY 6 · TRAVEL | Aayan, travel photo |
 | gallery-7 | Gallery (optional) | 3:4 | 1200×1600 | GALLERY 7 · FIT | Aayan, outfit photo |
 | gallery-8 | Gallery (optional) | 1:1 | 1200×1200 | GALLERY 8 · CANDID | Aayan, candid photo |
-| gallery-9 | Gallery (optional) | 4:5 | 1200×1500 | GALLERY 9 · COLLEGE | Aayan at college |
+| gallery-9 | Gallery (optional) | 4:5 | 1200×1500 | GALLERY 9 · CANDID | Aayan, candid |
 | about | About section | 4:5 | 1000×1250 | ABOUT PHOTO · CANDID | Aayan, candid photo |
 | og-image | Social share preview | 1.91:1 | 1200×630 | Generate as text only for now: off-white background, "AAYAN" in the display font, "1.8M+ reel views" below in cobalt | Aayan, creator portfolio |
 
@@ -255,8 +255,8 @@ Gallery slots 7–9 are optional. If their `src` is still null when the site goe
 - Fast: compress images to WebP, lazy-load everything below the hero, and load Instagram embeds only on click. Target Lighthouse 90+ for performance and accessibility.
 - Accessible: alt text on every image, correct heading order, labelled form fields, colour contrast of at least 4.5:1.
 - SEO:
-  - Title: `Aayan | Creator for College Humour, Fits & Travel`
-  - Meta description: `Aayan (@aayann26_) is a Delhi/Jammu creator making relatable college humour, outfit reels and travel content. 1.8M+ reel views. Collab enquiries welcome.`
+  - Title: `Aayan | Creator for Humour, Fits & Travel`
+  - Meta description: `Aayan (@aayann26_) is a Delhi/Jammu creator making relatable humour, outfit reels and travel content. 1.8M+ reel views. Collab enquiries welcome.`
   - Open Graph/Twitter card image: `[OG IMAGE 1200×630: hero photo + "Aayan · 1.8M+ reel views"]`
   - Favicon: a bold "A" in cobalt on the off-white background.
 - Keep all stats, reel links, collab data and contact details in one config/data file.
