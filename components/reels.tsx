@@ -1,79 +1,51 @@
 "use client"
 
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import type { Reel } from "@/lib/content"
 import { Photo } from "./photo"
 import { LoopVideo } from "./loop-video"
 
-declare global {
-  interface Window {
-    instgrm?: { Embeds: { process: () => void } }
-  }
-}
-
-const EMBED_SRC = "https://www.instagram.com/embed.js"
-
-function loadEmbedScript(): Promise<void> {
-  if (window.instgrm) return Promise.resolve()
-  return new Promise((resolve, reject) => {
-    const existing = document.querySelector<HTMLScriptElement>(`script[src="${EMBED_SRC}"]`)
-    const s = existing ?? document.createElement("script")
-    s.addEventListener("load", () => resolve(), { once: true })
-    s.addEventListener("error", () => reject(), { once: true })
-    if (!existing) {
-      s.src = EMBED_SRC
-      s.async = true
-      document.body.appendChild(s)
-    }
-  })
+/** Instagram's own embed page for a reel: no embed.js needed, works with /{user}/reel/{id}/ links. */
+const embedUrl = (url: string) => {
+  const id = url.match(/\/(?:reel|p)\/([^/?#]+)/)?.[1]
+  return id ? `https://www.instagram.com/p/${id}/embed/` : null
 }
 
 export function Reels({ reels }: { reels: Reel[] }) {
   const dialog = useRef<HTMLDialogElement>(null)
   const [active, setActive] = useState<Reel | null>(null)
+  const [loaded, setLoaded] = useState(false)
   const [failed, setFailed] = useState(false)
-  // embed.js swaps the blockquote for an iframe, so React must not own this subtree.
-  const host = useRef<HTMLDivElement>(null)
+  const [height, setHeight] = useState(760)
   const timer = useRef<ReturnType<typeof setTimeout>>(undefined)
 
-  const open = async (reel: Reel) => {
-    setFailed(false)
+  // The embed page reports its content height via postMessage ({type:"MEASURE"}).
+  useEffect(() => {
+    const onMsg = (e: MessageEvent) => {
+      if (!/^https:\/\/www\.instagram\.com$/.test(e.origin) || typeof e.data !== "string") return
+      try {
+        const d = JSON.parse(e.data)
+        if (d.type === "MEASURE" && d.details?.height > 100) setHeight(Math.ceil(d.details.height))
+      } catch {}
+    }
+    addEventListener("message", onMsg)
+    return () => removeEventListener("message", onMsg)
+  }, [])
+
+  const open = (reel: Reel) => {
+    setLoaded(false)
+    setFailed(!embedUrl(reel.url))
+    setHeight(760)
     setActive(reel)
     dialog.current?.showModal()
-    if (host.current) {
-      const bq = document.createElement("blockquote")
-      bq.className = "instagram-media"
-      bq.dataset.instgrmPermalink = reel.url
-      bq.dataset.instgrmVersion = "14"
-      bq.style.cssText = "margin:0;width:100%;min-width:0;border:0"
-      const a = document.createElement("a")
-      a.href = reel.url
-      a.target = "_blank"
-      a.rel = "noopener noreferrer"
-      a.className = "block p-6 text-center text-muted"
-      a.textContent = "Loading reel…"
-      bq.appendChild(a)
-      host.current.replaceChildren(bq)
-    }
     clearTimeout(timer.current)
-    timer.current = setTimeout(() => {
-      // Embed never sized itself (blocked, private, or offline) — offer the direct link.
-      const f = host.current?.querySelector("iframe")
-      if (!f || f.offsetHeight < 100) setFailed(true)
-    }, 8000)
-    try {
-      await loadEmbedScript()
-      // embed.js only scans on first load; process() picks up later blockquotes.
-      window.instgrm?.Embeds.process()
-    } catch {
-      setFailed(true)
-    }
+    // Blocked (content blocker, offline, private post): offer the direct link.
+    timer.current = setTimeout(() => setFailed(true), 10000)
   }
 
   const onClose = () => {
     clearTimeout(timer.current)
-    host.current?.replaceChildren() // stops playback
-    setActive(null)
+    setActive(null) // unmounts the iframe, which stops playback
   }
 
   return (
@@ -145,7 +117,25 @@ export function Reels({ reels }: { reels: Reel[] }) {
           </button>
         </div>
         <div className="p-3">
-          <div ref={host} className="relative min-h-24" />
+          <div className="relative overflow-hidden rounded-xl bg-bg" style={{ height: failed ? undefined : height, maxHeight: "calc(92dvh - 140px)" }}>
+            {active && !failed && embedUrl(active.url) && (
+              <iframe
+                key={active.url}
+                src={embedUrl(active.url)!}
+                title={`Instagram reel: ${active.caption}`}
+                allow="autoplay; encrypted-media; picture-in-picture; clipboard-write"
+                allowFullScreen
+                onLoad={() => {
+                  setLoaded(true)
+                  clearTimeout(timer.current)
+                }}
+                className="absolute inset-0 h-full w-full border-0"
+              />
+            )}
+            {!loaded && !failed && (
+              <p className="absolute inset-0 flex items-center justify-center text-muted" aria-live="polite">Loading reel…</p>
+            )}
+          </div>
           {active && (
             <p className="pt-3 text-center">
               <a
