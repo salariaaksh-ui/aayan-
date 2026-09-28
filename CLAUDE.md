@@ -1,0 +1,17 @@
+# Aayan (@aayann26_) — creator portfolio
+
+**NOT a real-estate site.** Ignore the agency RE page set (listings, maps, agent
+schema, Hostinger rule) from the parent `CLAUDE.md`. Craft floor still applies:
+LCP ≤2.5s, CLS ≤0.1, WCAG 2.2 AA, mobile-first, no horizontal scroll, tested form.
+
+- Brief (source of truth for every number/word): `docs/brief.md`
+- Single page, Next.js 16 App Router, Tailwind v4, no UI kit, no Motion
+  (reveal = CSS + IntersectionObserver, hidden only under `html.js`).
+- **All editable content lives in `lib/content.ts`.** Numbers are strings; never
+  invent stats, rates, demographics or brand names. Follower count stays out.
+- No Instagram/Zudio logos (incl. lucide's Instagram glyph). Plain text only.
+- No stock / AI people photos. Image slots are `src: null` placeholders until
+  real photos land in `public/photos/`.
+- Form: Formspree (`site.formspreeId`). Instagram embeds: loaded on click only.
+- Tailwind v4 ships an `invert` utility — the token-swap class is `.inverted`.
+- Dev/prod port: 3200.
