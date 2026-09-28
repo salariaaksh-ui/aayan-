@@ -236,7 +236,7 @@ export const about = {
     ["Based in", "Delhi / Jammu"],
     ["Content", "humour · fits & transitions · travel"],
     ["Languages", "[e.g. Hindi, English]"],
-    ["Available for", "reels, integrations, campus launches, shoots"],
+    ["Available for", "reels, integrations, shoots"],
   ],
 }
 
@@ -251,16 +251,11 @@ export const services = [
     title: "Outfit & transition reels",
     text: "For fashion, grooming and gym brands. Walk-ins, glow-ups and styling transitions.",
   },
-  {
-    mark: "C",
-    title: "Campus launches",
-    text: "Content for the Delhi and Jammu college crowd, including collabs with campus pages.",
-  },
-  { mark: "D", title: "Shoots", text: "Photo and reel shoots for your own channels." },
+  { mark: "C", title: "Shoots", text: "Photo and reel shoots for your own channels." },
 ]
 
 export const form = {
-  collabTypes: ["Reel integration", "Outfit/transition reel", "Campus launch", "Shoot", "Other"],
+  collabTypes: ["Reel integration", "Outfit/transition reel", "Shoot", "Other"],
   // Owner to set real ranges, e.g. "₹10k–25k". Placeholder shown until then.
   budgets: ["[owner to set ranges]", "Prefer to discuss"],
 }

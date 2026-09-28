@@ -129,16 +129,15 @@ Small facts list in mono:
 - Based in: Delhi / Jammu
 - Content: humour · fits & transitions · travel
 - Languages: [e.g. Hindi, English]
-- Available for: reels, integrations, campus launches, shoots
+- Available for: reels, integrations, shoots
 
 ### 4.9 Ways to collab
 Section title: **Ways to work together**
-A 2×2 grid of service tiles with a small letter marker (A, B, C, D) and a hairline border.
+A row of three service tiles with a small letter marker (A, B, C) and a hairline border.
 
 - **A. Humour integration:** Your product inside a relatable college or dating skit, in the format that gets his most shares.
 - **B. Outfit & transition reels:** For fashion, grooming and gym brands. Walk-ins, glow-ups and styling transitions.
-- **C. Campus launches:** Content for the Delhi and Jammu college crowd, including collabs with campus pages.
-- **D. Shoots:** Photo and reel shoots for your own channels.
+- **C. Shoots:** Photo and reel shoots for your own channels.
 
 Under the grid: *Rates and full Instagram Insights (reach, audience age and top cities) shared on request.*
 Button: **Download media kit (PDF)** → `[MEDIA KIT PDF LINK]` (hide the button if no link is set).
@@ -153,7 +152,7 @@ Form fields:
 - Name (required)
 - Brand / agency (required)
 - Email (required, validated)
-- Type of collab (dropdown: Reel integration, Outfit/transition reel, Campus launch, Shoot, Other)
+- Type of collab (dropdown: Reel integration, Outfit/transition reel, Shoot, Other)
 - Budget range (optional dropdown: [owner to set ranges] / Prefer to discuss)
 - Message (required)
 - Submit button: **Send enquiry**. On success show "Thanks, we'll reply within 48 hours." On error show "That didn't send. Email aayangupta2604@gmail.com directly."

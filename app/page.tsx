@@ -215,9 +215,9 @@ export default function Home() {
         {/* 9 · Ways to collab */}
         <section aria-labelledby="services-title" className={`${wrap} ${section} reveal pt-0 lg:pt-0`}>
           <SectionTitle id="services-title" eyebrow={`Formats · ${services.length} ways`}>Ways to work together</SectionTitle>
-          <ul className="mt-8 grid gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-5">
+          <ul className="mt-8 grid gap-4 sm:mt-12 sm:gap-5 lg:grid-cols-3">
             {services.map((s) => (
-              <li key={s.mark} className="card grid grid-cols-[auto_1fr] gap-x-5 p-5 sm:gap-x-6 sm:p-6 lg:p-8">
+              <li key={s.mark} className="card grid grid-cols-[auto_1fr] content-start gap-x-5 p-5 sm:gap-x-6 sm:p-6 lg:p-8">
                 <span className="display row-span-2 text-[48px] leading-[0.8] text-accent sm:text-[64px] lg:text-[80px]" aria-hidden>
                   {s.mark}
                 </span>
