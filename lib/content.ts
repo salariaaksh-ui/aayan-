@@ -197,8 +197,8 @@ export const collabs = [
 ]
 
 export const images = {
-  hero: { src: "/photos/hero.webp", alt: "Aayan in a red tee, hand in his hair, in a clothing store", label: "HERO PHOTO · 4:5 · 1200×1500", ratio: "4 / 5" },
-  about: { src: null, alt: "Aayan, candid photo", label: "ABOUT PHOTO · CANDID", ratio: "4 / 5" },
+  hero: { src: "/photos/hero-mirror.webp", alt: "Aayan in glasses and a green shirt, taking a mirror selfie in an oval mirror", label: "HERO PHOTO · 4:5 · 1200×1500", ratio: "4 / 5" },
+  about: { src: "/photos/about.webp", alt: "Black-and-white mirror selfie of Aayan in a leather jacket", label: "ABOUT PHOTO · CANDID", ratio: "4 / 5" },
 } satisfies Record<string, ImageSlot>
 
 /** Slots 7–9 are optional: hidden while src is null. */
