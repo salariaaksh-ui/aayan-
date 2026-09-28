@@ -200,17 +200,14 @@ export const images = {
   about: { src: "/photos/about.webp", alt: "Black-and-white mirror selfie of Aayan in a leather jacket", label: "ABOUT PHOTO · CANDID", ratio: "4 / 5" },
 } satisfies Record<string, ImageSlot>
 
-/** Slots 7–9 are optional: hidden while src is null. */
+/** Gallery photos. Add more by dropping a file in /public/photos and adding an entry.
+ *  An entry with src: null shows a placeholder, unless it's marked optional (then it's hidden). */
 export const gallery: (ImageSlot & { optional?: boolean })[] = [
-  { src: null, alt: "Aayan, outfit photo", label: "GALLERY 1 · FIT", ratio: "4 / 5" },
-  { src: null, alt: "Aayan, portrait", label: "GALLERY 2 · PORTRAIT", ratio: "1 / 1" },
-  { src: null, alt: "Aayan on a trek in Kashmir", label: "GALLERY 3 · TRAVEL", ratio: "4 / 5" },
-  { src: null, alt: "Aayan, outfit photo", label: "GALLERY 4 · FIT", ratio: "3 / 4" },
-  { src: null, alt: "Aayan, shoot photo", label: "GALLERY 5 · SHOOT", ratio: "1 / 1" },
-  { src: null, alt: "Aayan, travel photo", label: "GALLERY 6 · TRAVEL", ratio: "4 / 5" },
-  { src: null, alt: "Aayan, outfit photo", label: "GALLERY 7 · FIT", ratio: "3 / 4", optional: true },
-  { src: null, alt: "Aayan, candid photo", label: "GALLERY 8 · CANDID", ratio: "1 / 1", optional: true },
-  { src: null, alt: "Aayan, candid", label: "GALLERY 9 · CANDID", ratio: "4 / 5", optional: true },
+  { src: "/photos/gallery-1.webp", alt: "Aayan in sunglasses and a black knit sweater, side profile", label: "GALLERY 1", ratio: "3 / 4" },
+  { src: "/photos/gallery-2.webp", alt: "Black-and-white mirror selfie of Aayan in sunglasses and a black shirt", label: "GALLERY 2", ratio: "3 / 4" },
+  { src: "/photos/gallery-3.webp", alt: "Black-and-white mirror selfie, phone covering Aayan's face", label: "GALLERY 3", ratio: "9 / 16" },
+  { src: "/photos/gallery-4.webp", alt: "Black-and-white mirror selfie of Aayan in a leather jacket", label: "GALLERY 4", ratio: "3 / 4" },
+  { src: "/photos/gallery-5.webp", alt: "Aayan in glasses and a green shirt, taking a mirror selfie in an oval mirror", label: "GALLERY 5", ratio: "3 / 4" },
 ]
 
 export const about = {
