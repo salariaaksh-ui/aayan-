@@ -20,13 +20,13 @@ export default async function OG() {
           flexDirection: "column",
           justifyContent: "center",
           padding: "0 96px",
-          background: "#F3F4F7",
-          color: "#15171C",
+          background: "#F2EDE4",
+          color: "#1B1814",
           fontFamily: "Archivo",
         }}
       >
         <div style={{ fontSize: 190, lineHeight: 1, letterSpacing: "0.01em" }}>AAYAN</div>
-        <div style={{ fontSize: 56, marginTop: 24, color: "#2B45F0" }}>{`${stats[0].value} reel views`}</div>
+        <div style={{ fontSize: 56, marginTop: 24, color: "#C23A1C" }}>{`${stats[0].value} reel views`}</div>
       </div>
     ),
     { ...size, fonts: [{ name: "Archivo", data: font, weight: 900, style: "normal" }] }

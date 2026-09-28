@@ -70,7 +70,7 @@ export function Nav() {
         <ul className="flex flex-col gap-2 px-4 pt-6">
           {links.map(([label, href]) => (
             <li key={href}>
-              <a href={href} onClick={close} className="display block py-3 text-5xl">
+              <a href={href} onClick={close} className="display block py-3 text-[clamp(36px,11vw,48px)]">
                 {label}
               </a>
             </li>

@@ -92,7 +92,7 @@ export function ContactForm() {
       </label>
 
       <div className="sm:col-span-2">
-        <button type="submit" className="btn btn-primary" disabled={status === "sending"}>
+        <button type="submit" className="btn btn-primary w-full sm:w-auto" disabled={status === "sending"}>
           {status === "sending" ? "Sending…" : "Send enquiry"}
         </button>
         <p role="alert" className="mt-3 min-h-6 text-[15px]">

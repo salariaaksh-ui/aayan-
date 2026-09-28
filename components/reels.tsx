@@ -79,7 +79,7 @@ export function Reels({ reels }: { reels: Reel[] }) {
     <>
       <ul className="relative -mx-4 flex snap-x snap-mandatory scroll-px-4 sm:scroll-px-0 gap-4 overflow-x-auto px-4 pb-4 sm:mx-0 sm:grid sm:grid-cols-2 sm:gap-6 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-3">
         {reels.map((r, i) => (
-          <li key={r.url} className="w-[72vw] max-w-[300px] shrink-0 snap-start sm:w-auto sm:max-w-none">
+          <li key={r.url} className="w-[76vw] max-w-[300px] shrink-0 snap-start sm:w-auto sm:max-w-none">
             <a
               href={r.url}
               target="_blank"
@@ -92,7 +92,7 @@ export function Reels({ reels }: { reels: Reel[] }) {
               className="group relative block rounded-2xl"
               aria-label={`Watch reel: “${r.caption}”, ${r.views} views`}
             >
-              <Photo slot={r.cover} sizes="(min-width: 1024px) 360px, (min-width: 640px) 45vw, 72vw" />
+              <Photo slot={r.cover} sizes="(min-width: 1024px) 360px, (min-width: 640px) 45vw, 76vw" />
               <span aria-hidden className="mono absolute left-3 top-3 rounded-full bg-bg px-2.5 py-1 !text-[11px] text-ink">
                 #{i + 1}
               </span>
@@ -108,7 +108,7 @@ export function Reels({ reels }: { reels: Reel[] }) {
             </a>
             <div className="pt-4">
               <span className={`chip mono !text-[11px] ${r.brand ? "chip-filled" : ""}`}>{r.chip}</span>
-              <p className="display num mt-3 text-4xl">{r.views}</p>
+              <p className="display num mt-3 text-[32px] sm:text-4xl">{r.views}</p>
               <p className="mt-2 text-[16px]">“{r.caption}”</p>
               <p className="mono num mt-2 !text-[11px] text-muted">
                 {r.likes} likes · {r.comments} comments · {r.shares} shares · {r.engagement} engagement

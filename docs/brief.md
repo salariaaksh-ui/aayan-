@@ -177,13 +177,15 @@ Clean, editorial and photo-led, with one bold element: huge, wide display type f
 ### Colours (light mode is the default; include a dark mode that follows the system setting)
 | Token | Light | Dark | Use |
 |---|---|---|---|
-| Background | #F3F4F7 | #0F1117 | page background (slightly cool off-white) |
-| Surface | #FFFFFF | #181B24 | cards |
-| Ink | #15171C | #ECEEF3 | main text |
-| Muted | #5A5F6E | #9BA1B2 | secondary text, labels |
-| Line | #DCDFE7 | #2A2F3C | borders, dividers |
-| Accent (cobalt) | #2B45F0 | #8C9BFF | buttons, chips, bars, links |
-| Highlight (marker yellow) | #FFE14D | rgba(233,205,60,.4) | a highlighter-pen underline behind 1–2 key phrases only |
+| Background | #F2EDE4 | #15130F | page background (warm paper off-white) |
+| Surface | #FBF8F2 | #1E1B16 | cards |
+| Ink | #1B1814 | #EFE9DE | main text (espresso, not pure black) |
+| Muted | #625A4F | #A59C8E | secondary text, labels |
+| Line | #E2DACC | #332E27 | borders, dividers |
+| Accent (brick red) | #C23A1C | #F0704F | buttons, chips, bars, links |
+| Highlight (marker yellow) | #F4C542 | rgba(232,178,58,.38) | a highlighter-pen underline behind 1–2 key phrases only |
+
+Re-graded Sep 2026 at the owner's request: the original cool grey + cobalt read as a generic tech/AI template. The warm film-style grade suits fits, travel and real photos.
 
 The contact section uses Ink as its background and Background as its text colour.
 

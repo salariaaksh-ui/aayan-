@@ -1,29 +1,30 @@
 @import "tailwindcss";
 
-/* ── Tokens (brief §5). Light default, dark follows system. ── */
+/* ── Tokens (brief §5, warm re-grade): paper, espresso ink, brick-red accent.
+   Light default, dark follows system. ── */
 :root {
-  --bg: #f3f4f7;
-  --surface: #ffffff;
-  --ink: #15171c;
-  --muted: #5a5f6e;
-  --line: #dcdfe7;
-  --accent: #2b45f0;
-  --on-accent: #ffffff;
-  --highlight: #ffe14d;
+  --bg: #f2ede4;
+  --surface: #fbf8f2;
+  --ink: #1b1814;
+  --muted: #625a4f;
+  --line: #e2dacc;
+  --accent: #c23a1c;
+  --on-accent: #fff8ef;
+  --highlight: #f4c542;
   --nav-h: 68px;
   color-scheme: light;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #0f1117;
-    --surface: #181b24;
-    --ink: #eceef3;
-    --muted: #9ba1b2;
-    --line: #2a2f3c;
-    --accent: #8c9bff;
-    --on-accent: #0f1117;
-    --highlight: rgba(233, 205, 60, 0.4);
+    --bg: #15130f;
+    --surface: #1e1b16;
+    --ink: #efe9de;
+    --muted: #a59c8e;
+    --line: #332e27;
+    --accent: #f0704f;
+    --on-accent: #15130f;
+    --highlight: rgba(232, 178, 58, 0.38);
     color-scheme: dark;
   }
 }
@@ -31,24 +32,24 @@
 /* Inverted block (contact): swap the whole token set, not just bg/fg,
    so accent + focus ring keep contrast on the flipped background. */
 .inverted {
-  --bg: #0f1117;
-  --surface: #181b24;
-  --ink: #eceef3;
-  --muted: #9ba1b2;
-  --line: #2a2f3c;
-  --accent: #8c9bff;
-  --on-accent: #0f1117;
+  --bg: #15130f;
+  --surface: #1e1b16;
+  --ink: #efe9de;
+  --muted: #a59c8e;
+  --line: #332e27;
+  --accent: #f0704f;
+  --on-accent: #15130f;
   color-scheme: dark;
 }
 @media (prefers-color-scheme: dark) {
   .inverted {
-    --bg: #f3f4f7;
-    --surface: #ffffff;
-    --ink: #15171c;
-    --muted: #5a5f6e;
-    --line: #dcdfe7;
-    --accent: #2b45f0;
-    --on-accent: #ffffff;
+    --bg: #f2ede4;
+    --surface: #fbf8f2;
+    --ink: #1b1814;
+    --muted: #625a4f;
+    --line: #e2dacc;
+    --accent: #c23a1c;
+    --on-accent: #fff8ef;
     color-scheme: light;
   }
 }
@@ -77,9 +78,10 @@ html {
 
 body {
   background: var(--bg);
+  -webkit-tap-highlight-color: transparent;
   color: var(--ink);
   font-family: var(--font-sans);
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
 }
@@ -128,7 +130,10 @@ p { text-wrap: pretty; }
   border: 1px solid var(--ink);
   transition: transform 200ms ease-out, background-color 200ms, color 200ms;
 }
-.btn:hover { transform: translateY(-1px); }
+/* Lift only where hover is real — no sticky lift after a tap on phones */
+@media (hover: hover) {
+  .btn:hover { transform: translateY(-1px); }
+}
 .btn-primary { background: var(--ink); color: var(--bg); }
 .btn-secondary { background: transparent; color: var(--ink); }
 
@@ -149,7 +154,9 @@ p { text-wrap: pretty; }
   border-radius: 16px;
   transition: transform 250ms ease-out, border-color 250ms;
 }
-.card:hover { transform: translateY(-2px); border-color: var(--accent); }
+@media (hover: hover) {
+  .card:hover { transform: translateY(-2px); border-color: var(--accent); }
+}
 
 /* Placeholder (brief §5A) */
 .ph {
@@ -213,6 +220,8 @@ dialog::backdrop { background: rgb(0 0 0 / 0.7); }
 /* Signature: caption tape */
 @media (prefers-reduced-motion: no-preference) {
   .tape-track { animation: tape 55s linear infinite; }
-  .tape:hover .tape-track { animation-play-state: paused; }
+  @media (hover: hover) { .tape:hover .tape-track { animation-play-state: paused; } }
 }
 @keyframes tape { to { transform: translateX(-50%); } }
+
+@media (min-width: 640px) { body { font-size: 17px; } }
