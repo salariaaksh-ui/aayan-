@@ -200,14 +200,14 @@ export const images = {
   about: { src: "/photos/about.webp", alt: "Black-and-white mirror selfie of Aayan in a leather jacket", label: "ABOUT PHOTO · CANDID", ratio: "4 / 5" },
 } satisfies Record<string, ImageSlot>
 
-/** Gallery photos. Add more by dropping a file in /public/photos and adding an entry.
- *  An entry with src: null shows a placeholder, unless it's marked optional (then it's hidden). */
-export const gallery: (ImageSlot & { optional?: boolean })[] = [
-  { src: "/photos/gallery-8.webp", alt: "Aayan in a red shirt against a large tree trunk, dappled sunlight", label: "GALLERY 8", ratio: "3 / 4" },
+/** Gallery photos (all shown on /gallery). Add more by dropping a file in /public/photos
+ *  and adding an entry. `featured: true` puts it on the home page (first 3 are used). */
+export const gallery: (ImageSlot & { optional?: boolean; featured?: boolean })[] = [
+  { src: "/photos/gallery-8.webp", alt: "Aayan in a red shirt against a large tree trunk, dappled sunlight", label: "GALLERY 8", ratio: "3 / 4", featured: true },
   { src: "/photos/gallery-1.webp", alt: "Aayan in sunglasses and a black knit sweater, side profile", label: "GALLERY 1", ratio: "3 / 4" },
-  { src: "/photos/gallery-7.webp", alt: "Aayan in a red shirt by a lake, looking up at the trees", label: "GALLERY 7", ratio: "3 / 4" },
+  { src: "/photos/gallery-7.webp", alt: "Aayan in a red shirt by a lake, looking up at the trees", label: "GALLERY 7", ratio: "3 / 4", featured: true },
   { src: "/photos/gallery-2.webp", alt: "Black-and-white mirror selfie of Aayan in sunglasses and a black shirt", label: "GALLERY 2", ratio: "3 / 4" },
-  { src: "/photos/gallery-10.webp", alt: "Aayan in a red kurta holding a sparkler, lit in red", label: "GALLERY 10", ratio: "3 / 4" },
+  { src: "/photos/gallery-10.webp", alt: "Aayan in a red kurta holding a sparkler, lit in red", label: "GALLERY 10", ratio: "3 / 4", featured: true },
   { src: "/photos/gallery-3.webp", alt: "Black-and-white mirror selfie, phone covering Aayan's face", label: "GALLERY 3", ratio: "9 / 16" },
   { src: "/photos/gallery-9.webp", alt: "Close side profile of Aayan in a red shirt against a tree", label: "GALLERY 9", ratio: "3 / 4" },
   { src: "/photos/gallery-4.webp", alt: "Black-and-white mirror selfie of Aayan in a leather jacket", label: "GALLERY 4", ratio: "3 / 4" },

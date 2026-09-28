@@ -5,7 +5,9 @@ import Image from "next/image"
 import type { ImageSlot } from "@/lib/content"
 import { Photo } from "./photo"
 
-export function Gallery({ items }: { items: ImageSlot[] }) {
+/** "masonry": every photo in columns (the /gallery page). "row": a few equal tiles, swipeable on phones (home page). */
+export function Gallery({ items, variant = "masonry" }: { items: ImageSlot[]; variant?: "masonry" | "row" }) {
+  const row = variant === "row"
   const dialog = useRef<HTMLDialogElement>(null)
   const [idx, setIdx] = useState(0)
   const current = items[idx]
@@ -13,9 +15,19 @@ export function Gallery({ items }: { items: ImageSlot[] }) {
 
   return (
     <>
-      <ul className="columns-2 gap-4 sm:gap-6 lg:columns-3">
+      <ul
+        className={
+          row
+            ? "-mx-4 flex snap-x snap-mandatory scroll-px-4 gap-4 overflow-x-auto px-4 pb-3 sm:mx-0 sm:grid sm:grid-cols-3 sm:gap-6 sm:overflow-visible sm:px-0 sm:pb-0"
+            : "columns-2 gap-4 sm:gap-6 lg:columns-3"
+        }
+      >
         {items.map((slot, i) => (
-          <li key={slot.label} className="st mb-4 break-inside-avoid sm:mb-6" style={{ "--i": i } as React.CSSProperties}>
+          <li
+            key={slot.label}
+            className={row ? "st w-[70vw] max-w-[300px] shrink-0 snap-start sm:w-auto sm:max-w-none" : "st mb-4 break-inside-avoid sm:mb-6"}
+            style={{ "--i": i } as React.CSSProperties}
+          >
             <button
               type="button"
               data-cursor="View"
@@ -28,7 +40,7 @@ export function Gallery({ items }: { items: ImageSlot[] }) {
             >
               <Photo
                 slot={slot}
-                sizes="(min-width: 1024px) 360px, 50vw"
+                sizes={row ? "(min-width: 640px) 33vw, 70vw" : "(min-width: 1024px) 360px, 50vw"}
                 className="transition-transform duration-300 group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
               />
             </button>

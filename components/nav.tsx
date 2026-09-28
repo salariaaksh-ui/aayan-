@@ -1,12 +1,15 @@
 "use client"
 
+import Link from "next/link"
 import { useEffect, useRef, useState } from "react"
 
 const links = [
-  ["Work", "#reels"],
-  ["Collabs", "#collabs"],
-  ["About", "#about"],
-  ["Contact", "#contact"],
+  // Root-relative so they also work from /gallery
+  ["Work", "/#reels"],
+  ["Collabs", "/#collabs"],
+  ["Gallery", "/gallery"],
+  ["About", "/#about"],
+  ["Contact", "/#contact"],
 ] as const
 
 export function Nav() {
@@ -42,16 +45,16 @@ export function Nav() {
       } ${hidden ? "nav-hidden" : ""}`}
     >
       <nav aria-label="Main" className="mx-auto flex h-full max-w-[1160px] items-center justify-between px-4 sm:px-5">
-        <a href="#top" className="display text-2xl" aria-label="Aayan, back to top">
+        <Link href="/" className="display text-2xl" aria-label="Aayan, home">
           AAYAN
-        </a>
+        </Link>
         <div className="hidden items-center gap-7 md:flex">
           {links.map(([label, href]) => (
-            <a key={href} href={href} className="draw pb-0.5 text-[15px] font-medium text-muted transition-colors hover:text-ink">
+            <Link key={href} href={href} className="draw pb-0.5 text-[15px] font-medium text-muted transition-colors hover:text-ink">
               {label}
-            </a>
+            </Link>
           ))}
-          <a href="#contact" className="btn btn-primary" data-magnetic>Work with me</a>
+          <Link href="/#contact" className="btn btn-primary" data-magnetic>Work with me</Link>
         </div>
         <button
           type="button"
@@ -84,14 +87,14 @@ export function Nav() {
         <ul className="flex flex-col gap-2 px-4 pt-6">
           {links.map(([label, href], i) => (
             <li key={href} className="menu-item" style={{ "--i": i } as React.CSSProperties}>
-              <a href={href} onClick={close} className="display block py-3 text-[clamp(36px,11vw,48px)]">
+              <Link href={href} onClick={close} className="display block py-3 text-[clamp(36px,11vw,48px)]">
                 {label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
         <div className="menu-item px-4 pt-8" style={{ "--i": links.length } as React.CSSProperties}>
-          <a href="#contact" onClick={close} className="btn btn-primary w-full">Work with me</a>
+          <Link href="/#contact" onClick={close} className="btn btn-primary w-full">Work with me</Link>
         </div>
       </dialog>
     </header>

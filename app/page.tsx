@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { about, collabs, gallery, hero, images, lanes, reels, services, site, stats } from "@/lib/content"
 import { Nav } from "@/components/nav"
 import { Photo } from "@/components/photo"
@@ -7,12 +8,13 @@ import { Gallery } from "@/components/gallery"
 import { ContactForm, CopyEmail } from "@/components/contact-form"
 import { RevealObserver } from "@/components/reveal"
 import { Fx } from "@/components/fx"
+import { Footer } from "@/components/footer"
 
 const wrap = "mx-auto w-full max-w-[1160px] px-4 sm:px-5"
 const section = "py-14 sm:py-[72px] lg:py-[120px]"
 
-// Optional gallery slots (7–9) hidden until they have a photo.
-const galleryItems = gallery.filter((g) => !g.optional || g.src)
+// Home page shows only the featured shots; the rest live on /gallery.
+const galleryFeatured = gallery.filter((g) => g.featured && g.src).slice(0, 3)
 
 /** Stagger index for .st / .enter children */
 const v = (vars: Record<string, string | number>) => vars as React.CSSProperties
@@ -214,10 +216,13 @@ export default function Home() {
 
         {/* 7 · Gallery */}
         <section aria-labelledby="gallery-title" className={`${wrap} ${section} reveal pt-0 lg:pt-0`}>
-          <SectionTitle id="gallery-title" eyebrow="Gallery">Fits, shoots &amp; travel</SectionTitle>
+          <SectionTitle id="gallery-title" eyebrow={`Gallery · ${gallery.length} photos`}>Fits, shoots &amp; travel</SectionTitle>
           <div className="mt-8 sm:mt-12">
-            <Gallery items={galleryItems} />
+            <Gallery items={galleryFeatured} variant="row" />
           </div>
+          <Link href="/gallery" className="btn btn-secondary mt-8" data-magnetic>
+            See the full gallery <span aria-hidden className="arr">→</span>
+          </Link>
         </section>
 
         {/* 8 · About */}
@@ -315,27 +320,7 @@ export default function Home() {
       </main>
 
       {/* 11 · Footer */}
-      <footer>
-        <div className={`${wrap} overflow-hidden pt-12 sm:pt-16`} aria-hidden>
-          <p className="wm display flex select-none justify-center whitespace-nowrap text-[19.5vw] leading-[0.8] text-line lg:text-[268px]" data-parallax="0.05">
-            {"AAYAN".split("").map((c, i) => <span key={i}>{c}</span>)}
-          </p>
-        </div>
-        <div className={`${wrap} grid gap-6 border-t border-line py-8 sm:py-10 md:grid-cols-[1fr_2fr_1fr] md:items-center`}>
-          <div>
-            <p className="display text-xl">AAYAN</p>
-            <p className="mt-1 text-[14px] text-muted">© 2026 Aayan</p>
-          </div>
-          <p className="text-[14px] text-muted">
-            Stats from public reel counts, {site.statsDate}. Engagement = (likes + comments + shares) ÷ views.
-          </p>
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-[14px] md:justify-end">
-            <a href={site.instagram} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[44px] items-center hover:underline">Instagram</a>
-            <a href={`mailto:${site.email}`} className="inline-flex min-h-[44px] items-center hover:underline">Email</a>
-            <a href="#top" className="group inline-flex min-h-[44px] items-center gap-1 hover:underline">Back to top <span aria-hidden className="inline-block transition-transform duration-300 group-hover:-translate-y-1">↑</span></a>
-          </div>
-        </div>
-      </footer>
+      <Footer />
       <RevealObserver />
       <Fx />
     </>
