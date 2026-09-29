@@ -276,6 +276,11 @@ dialog::backdrop { background: rgb(0 0 0 / 0.7); }
 @media (hover: hover) { .group:hover .zoom img, .group:hover .zoom .ph { transform: scale(1.06); } }
 
 @media (prefers-reduced-motion: no-preference) {
+  /* Hero entrance */
+  html.js .enter { animation: enter-up 900ms cubic-bezier(0.2, 0.8, 0.2, 1) both; animation-delay: var(--d, 0s); }
+  html.js .rise-word > span { animation: rise 900ms cubic-bezier(0.2, 0.8, 0.2, 1) both; animation-delay: calc(120ms + var(--i) * 60ms); }
+  html.js .enter-photo { animation: photo-in 1200ms cubic-bezier(0.7, 0, 0.2, 1) backwards; animation-delay: 100ms; }
+  html.js .enter-sticker { animation: sticker-in 700ms cubic-bezier(0.3, 1.6, 0.5, 1) both; animation-delay: 900ms; }
   .blob-a { animation: drift-a 18s ease-in-out infinite alternate; }
   .blob-b { animation: drift-b 22s ease-in-out infinite alternate; }
 
@@ -301,6 +306,9 @@ dialog::backdrop { background: rgb(0 0 0 / 0.7); }
   .grain { animation: grain 0.9s steps(6) infinite; }
 }
 @keyframes enter-up { from { opacity: 0; transform: translateY(28px); } }
+@keyframes rise { from { transform: translateY(105%); } }
+@keyframes photo-in { from { clip-path: inset(100% 0 0 0 round 16px); transform: scale(1.08); } to { clip-path: inset(0 0 0 0 round 16px); } }
+@keyframes sticker-in { from { opacity: 0; transform: scale(0.4) rotate(-20deg); } }
 @keyframes drift-a { to { transform: translate(-120px, 90px) scale(1.15); } }
 @keyframes drift-b { to { transform: translate(140px, -70px) scale(0.9); } }
 @keyframes grain {

@@ -9,7 +9,7 @@ Live site: https://aayan-delta.vercel.app · Last updated: 29 Sep 2026
 
 ## Done 29 Sep 2026
 
-- Intro loader and hero entrance animation removed; the site shows instantly.
+- Intro loader removed. Hero entrance animation kept and now starts straight away.
 - Reel #5 now loops the full reel as posted.
 - Reel #1 now loops the full reel (Amity content OK'd by owner); its cover is the
   reel's own first frame, replacing the Zudio still.
