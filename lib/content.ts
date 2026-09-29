@@ -23,6 +23,10 @@ export const site = {
   email: "salariaaksh@gmail.com",
   // Shown under "Management" in Contact. Set to null to hide the line.
   management: "Aksh Salaria" as string | null,
+  // WhatsApp click-to-chat (free, no API). Digits only with country code, e.g.
+  // "919876543210". Set to null to hide the WhatsApp line.
+  whatsapp: null as string | null,
+  whatsappMessage: "Hi Aayan, I saw your portfolio and want to talk about a collab.",
   // Set to "/media-kit.pdf" (or a URL) to show the Download media kit button.
   mediaKit: null as string | null,
   statsDate: "28 Sep 2026",

@@ -306,6 +306,19 @@ export default function Home() {
                     <span className="draw">{site.handle}</span> <span aria-hidden className="arr">↗</span>
                   </a>
                 </div>
+                {site.whatsapp && (
+                  <div>
+                    <p className="mono !text-[11px] text-muted">WhatsApp</p>
+                    <a
+                      href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent(site.whatsappMessage)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="nudge mt-2 inline-block text-[18px] font-semibold"
+                    >
+                      <span className="draw">Message on WhatsApp</span> <span aria-hidden className="arr">↗</span>
+                    </a>
+                  </div>
+                )}
                 {site.management && (
                   <div>
                     <p className="mono !text-[11px] text-muted">Management</p>
