@@ -301,6 +301,14 @@ export default function Home() {
                     <span className="draw">{site.handle}</span> <span aria-hidden className="arr">↗</span>
                   </a>
                 </div>
+                {site.pinterest && (
+                  <div>
+                    <p className="mono !text-[11px] text-muted">Pinterest</p>
+                    <a href={site.pinterest} target="_blank" rel="noopener noreferrer" className="nudge mt-2 inline-block text-[18px] font-semibold">
+                      <span className="draw">Aayan17</span> <span aria-hidden className="arr">↗</span>
+                    </a>
+                  </div>
+                )}
                 {whatsappHref && (
                   <div>
                     <p className="mono !text-[11px] text-muted">WhatsApp</p>

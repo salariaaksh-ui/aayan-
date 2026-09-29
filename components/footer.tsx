@@ -20,6 +20,7 @@ export function Footer() {
         </p>
         <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-[14px] md:justify-end">
           <a href={site.instagram} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[44px] items-center hover:underline">Instagram</a>
+          {site.pinterest && <a href={site.pinterest} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[44px] items-center hover:underline">Pinterest</a>}
           <a href={`mailto:${site.email}`} className="inline-flex min-h-[44px] items-center hover:underline">Email</a>
           <a href="#top" className="group inline-flex min-h-[44px] items-center gap-1 hover:underline">Back to top <span aria-hidden className="inline-block transition-transform duration-300 group-hover:-translate-y-1">↑</span></a>
         </div>

@@ -9,6 +9,7 @@ Live site: https://aayan-delta.vercel.app · Last updated: 29 Sep 2026
 
 ## Done 29 Sep 2026
 
+- Pinterest (pinterest.com/Aayan17) added: corner logo button, Contact and footer.
 - Media kit button removed (there's no media kit; rates and Insights stay "on request").
 - WhatsApp + Instagram logo buttons pinned to the bottom-right corner on every page.
 - Intro loader removed. Hero entrance animation kept and now starts straight away.

@@ -20,6 +20,8 @@ export const site = {
   name: "Aayan",
   handle: "@aayann26_",
   instagram: "https://www.instagram.com/aayann26_/",
+  // Set to null to hide the Pinterest links.
+  pinterest: "https://www.pinterest.com/Aayan17/" as string | null,
   email: "salariaaksh@gmail.com",
   // Shown under "Management" in Contact. Set to null to hide the line.
   management: "Aksh Salaria" as string | null,
