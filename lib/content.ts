@@ -105,7 +105,7 @@ export const reels: Reel[] = [
     engagement: "2.0%",
     bar: 100,
     url: "https://www.instagram.com/aayann26_/reel/Dbs2cMlJHxn/",
-    cover: cover(1, "Cover of Aayan's meme reel"),
+    cover: cover(1, "Aayan in a red tee and earphones, hand in his hair, in a clothing store", "/photos/reel-1.webp"),
   },
   {
     chip: "Brand collab (Zudio)",
