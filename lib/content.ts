@@ -25,7 +25,7 @@ export const site = {
   management: "Aksh Salaria" as string | null,
   // WhatsApp click-to-chat (free, no API). Digits only with country code, e.g.
   // "919876543210". Set to null to hide the WhatsApp line.
-  whatsapp: null as string | null,
+  whatsapp: "917717422247" as string | null,
   whatsappMessage: "Hi Aayan, I saw your portfolio and want to talk about a collab.",
   // Set to "/media-kit.pdf" (or a URL) to show the Download media kit button.
   mediaKit: null as string | null,
