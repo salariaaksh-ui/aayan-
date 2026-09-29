@@ -9,7 +9,7 @@ LCP ≤2.5s, CLS ≤0.1, WCAG 2.2 AA, mobile-first, no horizontal scroll.
   (reveal = CSS + IntersectionObserver, hidden only under `html.js`).
 - **All editable content lives in `lib/content.ts`.** Numbers are strings; never
   invent stats, rates, demographics or brand names. Follower count stays out.
-- No Instagram/Zudio logos (incl. lucide's Instagram glyph). Plain text only.
+- No Zudio logo. WhatsApp + Instagram glyphs (Simple Icons, CC0) only in the corner dock (`components/social-dock.tsx`), owner-approved; plain text elsewhere.
 - No stock / AI people photos. Image slots are `src: null` placeholders until
   real photos land in `public/photos/`.
 - No contact form (portfolio is sent in DMs): email, Instagram and management only. Instagram embeds: loaded on click only.
