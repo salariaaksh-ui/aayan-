@@ -149,6 +149,7 @@ export const reels: Reel[] = [
     bar: 25,
     url: "https://www.instagram.com/aayann26_/reel/DX0_xOdx4Zo/",
     cover: cover(4, "Aayan pointing at a wall under the caption 'how many exes do you have?'", "/photos/reel-4.webp"),
+    video: "/video/reel-4.mp4",
   },
   {
     chip: "Fits & transitions",
@@ -173,6 +174,7 @@ export const reels: Reel[] = [
     bar: 13,
     url: "https://www.instagram.com/aayann26_/reel/DZkCcAVRB7Y/",
     cover: cover(6, "Green mountain valley on a Kashmir trek", "/photos/reel-6.webp"),
+    video: "/video/reel-6.mp4",
   },
 ]
 
