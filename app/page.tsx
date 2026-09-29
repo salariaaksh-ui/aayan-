@@ -150,10 +150,10 @@ export default function Home() {
         {/* 4 · Content lanes */}
         <section aria-labelledby="lanes-title" className={`${wrap} ${section} reveal`}>
           <SectionTitle id="lanes-title" eyebrow="What he makes">Three kinds of content</SectionTitle>
-          <p className="mono mt-4 flex items-center gap-2 !text-[11px] text-muted md:hidden">Swipe <span aria-hidden className="swipe-arr">→</span></p>
-          <ul className="-mx-4 mt-5 flex snap-x snap-mandatory scroll-px-4 gap-4 overflow-x-auto px-4 pb-3 sm:-mx-5 sm:scroll-px-5 sm:px-5 md:mx-0 md:mt-12 md:grid md:grid-cols-3 md:gap-5 md:overflow-visible md:px-0 md:pb-0">
+          <p className="mono mt-4 flex items-center gap-2 !text-[11px] text-muted lg:hidden">Swipe <span aria-hidden className="swipe-arr">→</span></p>
+          <ul className="-mx-4 mt-5 flex snap-x snap-mandatory scroll-px-4 gap-4 overflow-x-auto px-4 pb-3 sm:-mx-5 sm:mt-8 sm:scroll-px-5 sm:px-5 lg:mx-0 lg:mt-12 lg:grid lg:grid-cols-3 lg:gap-5 lg:overflow-visible lg:px-0 lg:pb-0">
             {lanes.map((l, i) => (
-              <li key={l.title} className="card st flex w-[80vw] max-w-[340px] shrink-0 snap-start flex-col p-5 sm:p-6 md:w-auto md:max-w-none lg:p-8" data-tilt="5" style={v({ "--i": i })}>
+              <li key={l.title} className="card st flex w-[80vw] max-w-[340px] shrink-0 snap-start flex-col p-5 sm:p-6 lg:w-auto lg:max-w-none lg:p-8" data-tilt="5" style={v({ "--i": i })}>
                 <div className="flex items-center justify-between">
                   <span className="chip mono !text-[11px]">{l.label}</span>
                   <span aria-hidden className="mono num !text-[11px] text-muted">0{i + 1}/0{lanes.length}</span>
@@ -253,8 +253,8 @@ export default function Home() {
           <SectionTitle id="services-title" eyebrow={`Formats · ${services.length} ways`}>Ways to work together</SectionTitle>
           <ul className="mt-8 grid gap-4 sm:mt-12 sm:gap-5 lg:grid-cols-3">
             {services.map((s, i) => (
-              <li key={s.mark} style={v({ "--i": i })} data-tilt="5" className="card st grid grid-cols-[auto_1fr] content-start gap-x-5 p-5 sm:gap-x-6 sm:p-6 lg:p-8">
-                <span className="svc-mark display row-span-2 text-[48px] leading-[0.8] text-accent sm:text-[64px] lg:text-[80px]" aria-hidden>
+              <li key={s.mark} style={v({ "--i": i })} data-tilt="5" className="card st grid grid-cols-[auto_1fr] content-start gap-x-5 p-5 sm:gap-x-6 sm:p-6 lg:grid-cols-1 lg:p-8">
+                <span className="svc-mark display row-span-2 text-[48px] leading-[0.8] text-accent sm:text-[64px] lg:row-span-1 lg:mb-6 lg:text-[72px]" aria-hidden>
                   {s.mark}
                 </span>
                 <h3 className="text-[20px] font-semibold leading-snug sm:text-[22px]">
@@ -285,7 +285,7 @@ export default function Home() {
               Let&apos;s make something <span className="mark-contact">people share.</span>
             </h2>
             <div className="st mt-10 border-t border-line pt-8 sm:mt-14" style={v({ "--i": 2 })}>
-              <div className="flex flex-col gap-8 sm:flex-row sm:flex-wrap sm:gap-x-16">
+              <div className="grid gap-8 sm:grid-cols-2 sm:gap-x-10 lg:grid-cols-3">
                 <div>
                   <p className="mono !text-[11px] text-muted">Email</p>
                   <div className="mt-2 flex flex-wrap items-center gap-3">

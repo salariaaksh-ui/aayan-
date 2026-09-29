@@ -6,11 +6,11 @@ export function Footer() {
   return (
     <footer>
       <div className={`${wrap} overflow-hidden pt-12 sm:pt-16`} aria-hidden>
-        <p className="wm display flex select-none justify-center whitespace-nowrap text-[19.5vw] leading-[0.8] text-line lg:text-[268px]" data-parallax="0.05">
+        <p className="wm display flex select-none justify-center whitespace-nowrap text-[min(19.5vw,236px)] leading-[0.8] text-line" data-parallax="0.05">
           {"AAYAN".split("").map((c, i) => <span key={i}>{c}</span>)}
         </p>
       </div>
-      <div className={`${wrap} grid gap-6 border-t border-line py-8 sm:py-10 md:grid-cols-[1fr_2fr_1fr] md:items-center`}>
+      <div className={`${wrap} grid gap-6 border-t border-line py-8 max-[1320px]:pr-20! sm:py-10 md:grid-cols-[1fr_2fr_1fr] md:items-center`}>
         <div>
           <p className="display text-xl">AAYAN</p>
           <p className="mt-1 text-[14px] text-muted">© 2026 Aayan</p>

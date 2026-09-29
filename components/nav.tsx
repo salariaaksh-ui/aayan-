@@ -45,7 +45,7 @@ export function Nav() {
       } ${hidden ? "nav-hidden" : ""}`}
     >
       <nav aria-label="Main" className="mx-auto flex h-full max-w-[1160px] items-center justify-between px-4 sm:px-5">
-        <Link href="/" className="display text-2xl" aria-label="Aayan, home">
+        <Link href="/" className="display inline-flex min-h-[44px] items-center text-2xl" aria-label="Aayan, home">
           AAYAN
         </Link>
         <div className="hidden items-center gap-7 md:flex">
