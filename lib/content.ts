@@ -109,7 +109,8 @@ export const reels: Reel[] = [
     engagement: "2.0%",
     bar: 100,
     url: "https://www.instagram.com/aayann26_/reel/Dbs2cMlJHxn/",
-    cover: cover(1, "Aayan in a red tee and earphones, hand in his hair, in a clothing store", "/photos/reel-1.webp"),
+    cover: cover(1, "Amity University admission pack under the caption 'finally got into my dream university'", "/photos/reel-1.webp"),
+    video: "/video/reel-1.mp4",
   },
   {
     chip: "Brand collab (Zudio)",

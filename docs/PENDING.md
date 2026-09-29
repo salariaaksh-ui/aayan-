@@ -4,10 +4,9 @@ Live site: https://aayan-delta.vercel.app · Last updated: 29 Sep 2026
 
 ## Needs something from you
 
-1. **Reel #1 and #5 clips** (optional): pulled from Instagram but not used.
-   #1 shows the Amity bag and certificate until the Spider-Man ending (~18-21s),
-   which could loop on its own if you want. #5 intercuts photos of Ranbir Kapoor,
-   so only ~1s is Aayan alone. Both cards keep their still covers for now.
+1. **Reel #5 clip** (optional): pulled from Instagram but not used, since it
+   intercuts photos of Ranbir Kapoor and only ~1s is Aayan alone. The card keeps
+   its still cover.
 
 ## To check together
 
@@ -16,6 +15,8 @@ Live site: https://aayan-delta.vercel.app · Last updated: 29 Sep 2026
 
 ## Done 29 Sep 2026
 
+- Reel #1 now loops the full reel (Amity content OK'd by owner); its cover is the
+  reel's own first frame, replacing the Zudio still.
 - Reels #4 and #6 now loop on their cards (clips taken from Instagram, silent).
 - WhatsApp click-to-chat link added in Contact (+91 77174 22247).
 - Missing lake/visor photos dropped; the gallery uses the 10 photos already there.
