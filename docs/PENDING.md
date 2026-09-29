@@ -2,19 +2,15 @@
 
 Live site: https://aayan-delta.vercel.app · Last updated: 29 Sep 2026
 
-## Needs something from you
-
-1. **Reel #5 clip** (optional): pulled from Instagram but not used, since it
-   intercuts photos of Ranbir Kapoor and only ~1s is Aayan alone. The card keeps
-   its still cover.
-
 ## To check together
 
-2. **Home page gallery picks**: currently the tree, lake and sparkler shots. Change
+1. **Home page gallery picks**: currently the tree, lake and sparkler shots. Change
    them if you want.
 
 ## Done 29 Sep 2026
 
+- Intro loader and hero entrance animation removed; the site shows instantly.
+- Reel #5 now loops the full reel as posted.
 - Reel #1 now loops the full reel (Amity content OK'd by owner); its cover is the
   reel's own first frame, replacing the Zudio still.
 - Reels #4 and #6 now loop on their cards (clips taken from Instagram, silent).
@@ -24,16 +20,15 @@ Live site: https://aayan-delta.vercel.app · Last updated: 29 Sep 2026
   Instagram, WhatsApp and management.
 - Reel popup confirmed playing on a phone.
 - Hero photo cropped closer so Aayan fills the frame (kept as the hero).
-- Zudio footage approved for reuse. Reel #1's cover is now a frame from the Zudio
-  video (Aayan alone in the red tee), replacing the grey placeholder.
+- Zudio footage approved for reuse.
 
 ## Optional extras
 
-3. **Link preview image**: the image shown when the link is shared on WhatsApp or
+2. **Link preview image**: the image shown when the link is shared on WhatsApp or
    Instagram is still text-only. It could use a photo of Aayan.
-4. **Media kit PDF**: add a "Download media kit" button once there's a PDF.
-5. **Travel photos**: the gallery says "Fits, shoots & travel" but has no
+3. **Media kit PDF**: add a "Download media kit" button once there's a PDF.
+4. **Travel photos**: the gallery says "Fits, shoots & travel" but has no
    trek or travel shots yet.
-6. **Custom domain**: for example aayan.in, instead of aayan-delta.vercel.app.
-7. **Stats refresh**: the numbers are public counts as of 28 Sep 2026. Update them
+5. **Custom domain**: for example aayan.in, instead of aayan-delta.vercel.app.
+6. **Stats refresh**: the numbers are public counts as of 28 Sep 2026. Update them
    monthly (1.8M+ total views, 513K top reel, and so on).

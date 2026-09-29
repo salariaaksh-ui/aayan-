@@ -43,32 +43,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     >
       <head>
         {/* Before paint: enables reveal-hiding only when JS runs (content stays visible without JS) */}
-        {/* ...and plays the intro loader once per session (skipped under reduced motion) */}
         <script
           dangerouslySetInnerHTML={{
             __html:
-              "var d=document.documentElement;d.classList.add('js');try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&!sessionStorage.getItem('intro')){d.classList.add('intro');sessionStorage.setItem('intro','1')}}catch(e){}",
+              "document.documentElement.classList.add('js')",
           }}
         />
       </head>
       <body>
-        <div className="loader" aria-hidden>
-          <div className="mono flex justify-between text-[11px] opacity-70">
-            <span>{site.handle}</span>
-            <span>Delhi / Jammu</span>
-          </div>
-          <div>
-            <div className="display loader-word text-[19vw] lg:text-[16vw]">
-              {"AAYAN".split("").map((c, i) => (
-                <span key={i} style={{ "--i": i } as React.CSSProperties}>{c}</span>
-              ))}
-            </div>
-            <div className="mt-4 flex items-end justify-between gap-6">
-              <div className="loader-bar flex-1" />
-              <span className="display loader-count num text-[40px] leading-none" />
-            </div>
-          </div>
-        </div>
         <div className="grain" aria-hidden />
         <a
           href="#main"

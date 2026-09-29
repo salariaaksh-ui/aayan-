@@ -163,6 +163,7 @@ export const reels: Reel[] = [
     bar: 16,
     url: "https://www.instagram.com/aayann26_/reel/DVlLpO-EaWb/",
     cover: cover(5, "Aayan in a red shirt, reflected in a mirror", "/photos/reel-5.webp"),
+    video: "/video/reel-5.mp4",
   },
   {
     chip: "Travel",

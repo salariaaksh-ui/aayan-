@@ -268,165 +268,7 @@ dialog::backdrop { background: rgb(0 0 0 / 0.7); }
    under html.js, all of it off under prefers-reduced-motion.
    ══════════════════════════════════════════════════════════════ */
 
-@property --n { syntax: "<integer>"; initial-value: 0; inherits: false; }
 
-/* ── Intro loader: first visit per session only (html.intro set in <head>) ── */
-.loader { display: none; }
-html.intro .loader {
-  position: fixed;
-  inset: 0;
-  z-index: 100;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 20px 16px;
-  background: var(--ink);
-  color: var(--bg);
-  pointer-events: none;
-  overflow: hidden;
-  animation: loader-out 700ms cubic-bezier(0.7, 0, 0.2, 1) 1050ms forwards;
-}
-.loader-word { display: flex; overflow: hidden; line-height: 0.85; padding-bottom: 0.06em; }
-.loader-word span { display: inline-block; animation: rise 700ms cubic-bezier(0.2, 0.8, 0.2, 1) both; animation-delay: calc(var(--i) * 70ms); }
-.loader-count::after {
-  counter-reset: n var(--n);
-  content: counter(n) "%";
-  animation: count 950ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-.loader-bar { height: 2px; background: var(--accent); transform-origin: left; animation: bar 950ms cubic-bezier(0.4, 0, 0.2, 1) both; }
-@keyframes count { to { --n: 100; } }
-@keyframes bar { from { transform: scaleX(0); } }
-@keyframes loader-out { to { clip-path: inset(0 0 100% 0); visibility: hidden; } }
-@keyframes rise { from { transform: translateY(105%); } }
-
-/* ── Film grain over everything (static on touch screens) ── */
-.grain {
-  position: fixed;
-  inset: 0;
-  z-index: 60;
-  pointer-events: none;
-  opacity: 0.07;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-@media (prefers-color-scheme: dark) { .grain { opacity: 0.05; mix-blend-mode: screen; filter: invert(1); } }
-
-/* ── Hero: drifting colour blobs behind the type ── */
-.blob {
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-  will-change: transform;
-}
-.blob-a { width: 520px; height: 520px; top: -120px; right: -160px; background: radial-gradient(circle, color-mix(in srgb, var(--accent) 22%, transparent), transparent 68%); }
-.blob-b { width: 460px; height: 460px; bottom: -160px; left: -180px; background: radial-gradient(circle, color-mix(in srgb, var(--highlight) 38%, transparent), transparent 68%); }
-
-/* Split-letter headline */
-.rise-word { display: inline-flex; overflow: hidden; padding-bottom: 0.12em; margin-bottom: -0.12em; }
-.rise-word > span { display: inline-block; transition: translate 350ms cubic-bezier(0.2, 0.8, 0.2, 1), color 250ms; }
-@media (hover: hover) {
-  .rise-word > span:hover { translate: 0 -8%; color: var(--accent); }
-}
-
-/* Contact: rotating badge */
-.badge-spin { animation: spin 22s linear infinite; }
-@keyframes spin { to { transform: rotate(1turn); } }
-
-/* Crossed tapes */
-.tapes { position: relative; overflow: hidden; padding: 56px 0; }
-.tapes .tape { transform: rotate(-3deg) scale(1.06); }
-.tapes .tape-back { position: absolute; inset: 50% 0 auto; translate: 0 -50%; transform: rotate(4.5deg) scale(1.1); }
-.tape-back .tape-track { animation-direction: reverse; }
-
-/* Custom cursor (fine pointers only, created by Fx) */
-.cur-ring, .cur-dot {
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 90;
-  pointer-events: none;
-  border-radius: 999px;
-  opacity: 0;
-  transition: opacity 250ms;
-}
-.cur-dot { width: 6px; height: 6px; margin: -3px 0 0 -3px; background: var(--accent); }
-.cur-ring {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  margin: -18px 0 0 -18px;
-  border: 1px solid var(--ink);
-  color: var(--on-accent);
-  font: 600 11px/1 var(--font-mono);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  transition: opacity 250ms, width 300ms cubic-bezier(0.2, 0.8, 0.2, 1), height 300ms cubic-bezier(0.2, 0.8, 0.2, 1), margin 300ms cubic-bezier(0.2, 0.8, 0.2, 1), background-color 250ms, border-color 250ms;
-}
-html.cursor-on .cur-ring, html.cursor-on .cur-dot { opacity: 1; }
-/* Plain ring inverts against whatever is under it, so it shows on light and dark blocks */
-html:not(.cursor-label):not(.cursor-link) .cur-ring { border-color: #fff; mix-blend-mode: difference; }
-html.cursor-link .cur-ring { width: 56px; height: 56px; margin: -28px 0 0 -28px; border-color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); }
-html.cursor-label .cur-ring { width: 84px; height: 84px; margin: -42px 0 0 -42px; border-color: var(--accent); background: var(--accent); }
-html.cursor-label .cur-dot, html.cursor-link .cur-dot { opacity: 0; }
-
-/* 3D tilt surfaces (vars set by Fx) */
-.tilt {
-  transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
-  transition: transform 500ms cubic-bezier(0.2, 0.8, 0.2, 1);
-  transform-style: preserve-3d;
-}
-.tilt.tilting { transition-duration: 120ms; }
-.glare { position: relative; }
-.glare::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  border-radius: 16px;
-  pointer-events: none;
-  opacity: 0;
-  background: radial-gradient(360px circle at var(--mx, 50%) var(--my, 50%), rgb(255 255 255 / 0.28), transparent 55%);
-  transition: opacity 300ms;
-}
-.tilting.glare::after, .tilting .glare::after { opacity: 1; }
-
-/* Reel play button: pulse ring */
-.pulse { position: relative; }
-.pulse::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  border: 2px solid var(--accent);
-  animation: pulse 2.4s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
-}
-@keyframes pulse { from { transform: scale(1); opacity: 0.9; } to { transform: scale(1.7); opacity: 0; } }
-
-/* Link underline that draws in */
-.draw { background: linear-gradient(currentColor, currentColor) left bottom / 0 1.5px no-repeat; transition: background-size 350ms cubic-bezier(0.2, 0.8, 0.2, 1); }
-@media (hover: hover) { .draw:hover { background-size: 100% 1.5px; } }
-.nudge .arr { display: inline-block; transition: translate 300ms cubic-bezier(0.2, 0.8, 0.2, 1); }
-@media (hover: hover) { .nudge:hover .arr { translate: 3px -3px; } }
-
-/* Services letter flips on hover */
-.svc-mark { display: inline-block; transition: transform 700ms cubic-bezier(0.2, 0.8, 0.2, 1); }
-@media (hover: hover) { .card:hover .svc-mark { transform: rotateY(360deg) scale(1.08); } }
-
-/* Stats: number lifts to accent on hover */
-.stats dd { transition: translate 300ms cubic-bezier(0.2, 0.8, 0.2, 1), color 300ms; }
-@media (hover: hover) { .stats > div:hover dd { translate: 0 -4px; color: var(--accent); } }
-
-/* Footer wordmark letters */
-.wm > span { display: inline-block; transition: translate 400ms cubic-bezier(0.2, 0.8, 0.2, 1), color 250ms; }
-@media (hover: hover) { .wm > span:hover { translate: 0 -10%; color: var(--accent); } }
-
-/* Swipe hint */
-.swipe-arr { display: inline-block; }
-
-/* Nav: hide on scroll down, progress hairline */
-.nav-bar { transition: transform 350ms cubic-bezier(0.2, 0.8, 0.2, 1), background-color 200ms, border-color 200ms; }
-.nav-bar.nav-hidden:not(:focus-within) { transform: translateY(-100%); }
 .progress { transform-origin: left; transform: scaleX(var(--p, 0)); }
 
 /* Hover zoom for photos inside a group */
@@ -434,13 +276,6 @@ html.cursor-label .cur-dot, html.cursor-link .cur-dot { opacity: 0; }
 @media (hover: hover) { .group:hover .zoom img, .group:hover .zoom .ph { transform: scale(1.06); } }
 
 @media (prefers-reduced-motion: no-preference) {
-  html.intro { --intro: 1.05s; }
-
-  /* Hero entrance */
-  html.js .enter { animation: enter-up 900ms cubic-bezier(0.2, 0.8, 0.2, 1) both; animation-delay: calc(var(--intro, 0s) + var(--d, 0s)); }
-  html.js .rise-word > span { animation: rise 900ms cubic-bezier(0.2, 0.8, 0.2, 1) both; animation-delay: calc(var(--intro, 0s) + 120ms + var(--i) * 60ms); }
-  html.js .enter-photo { animation: photo-in 1200ms cubic-bezier(0.7, 0, 0.2, 1) backwards; animation-delay: calc(var(--intro, 0s) + 100ms); }
-  html.js .enter-sticker { animation: sticker-in 700ms cubic-bezier(0.3, 1.6, 0.5, 1) both; animation-delay: calc(var(--intro, 0s) + 900ms); }
   .blob-a { animation: drift-a 18s ease-in-out infinite alternate; }
   .blob-b { animation: drift-b 22s ease-in-out infinite alternate; }
 
@@ -466,8 +301,6 @@ html.cursor-label .cur-dot, html.cursor-link .cur-dot { opacity: 0; }
   .grain { animation: grain 0.9s steps(6) infinite; }
 }
 @keyframes enter-up { from { opacity: 0; transform: translateY(28px); } }
-@keyframes photo-in { from { clip-path: inset(100% 0 0 0 round 16px); transform: scale(1.08); } to { clip-path: inset(0 0 0 0 round 16px); } }
-@keyframes sticker-in { from { opacity: 0; transform: scale(0.4) rotate(-20deg); } }
 @keyframes drift-a { to { transform: translate(-120px, 90px) scale(1.15); } }
 @keyframes drift-b { to { transform: translate(140px, -70px) scale(0.9); } }
 @keyframes grain {
