@@ -266,11 +266,6 @@ export default function Home() {
             ))}
           </ul>
           <p className="mt-8 text-muted">Rates and full Instagram Insights (reach, audience age and top cities) shared on request.</p>
-          {site.mediaKit && (
-            <a href={site.mediaKit} className="btn btn-secondary mt-6" download>
-              Download media kit (PDF)
-            </a>
-          )}
         </section>
 
         {/* 10 · Contact — inverted block */}

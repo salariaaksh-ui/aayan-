@@ -27,8 +27,6 @@ export const site = {
   // "919876543210". Set to null to hide the WhatsApp line.
   whatsapp: "917717422247" as string | null,
   whatsappMessage: "Hi Aayan, I saw your portfolio and want to talk about a collab.",
-  // Set to "/media-kit.pdf" (or a URL) to show the Download media kit button.
-  mediaKit: null as string | null,
   statsDate: "28 Sep 2026",
   title: "Aayan | Creator for Humour, Fits & Travel",
   description:

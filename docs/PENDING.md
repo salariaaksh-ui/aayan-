@@ -9,6 +9,7 @@ Live site: https://aayan-delta.vercel.app · Last updated: 29 Sep 2026
 
 ## Done 29 Sep 2026
 
+- Media kit button removed (there's no media kit; rates and Insights stay "on request").
 - WhatsApp + Instagram logo buttons pinned to the bottom-right corner on every page.
 - Intro loader removed. Hero entrance animation kept and now starts straight away.
 - Reel #5 now loops the full reel as posted.
@@ -27,9 +28,8 @@ Live site: https://aayan-delta.vercel.app · Last updated: 29 Sep 2026
 
 2. **Link preview image**: the image shown when the link is shared on WhatsApp or
    Instagram is still text-only. It could use a photo of Aayan.
-3. **Media kit PDF**: add a "Download media kit" button once there's a PDF.
-4. **Travel photos**: the gallery says "Fits, shoots & travel" but has no
+3. **Travel photos**: the gallery says "Fits, shoots & travel" but has no
    trek or travel shots yet.
-5. **Custom domain**: for example aayan.in, instead of aayan-delta.vercel.app.
-6. **Stats refresh**: the numbers are public counts as of 28 Sep 2026. Update them
+4. **Custom domain**: for example aayan.in, instead of aayan-delta.vercel.app.
+5. **Stats refresh**: the numbers are public counts as of 28 Sep 2026. Update them
    monthly (1.8M+ total views, 513K top reel, and so on).
