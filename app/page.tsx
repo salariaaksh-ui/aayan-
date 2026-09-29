@@ -5,7 +5,7 @@ import { Photo } from "@/components/photo"
 import { CountUp } from "@/components/count-up"
 import { Reels } from "@/components/reels"
 import { Gallery } from "@/components/gallery"
-import { ContactForm, CopyEmail } from "@/components/contact-form"
+import { CopyEmail } from "@/components/copy-email"
 import { RevealObserver } from "@/components/reveal"
 import { Fx } from "@/components/fx"
 import { Footer } from "@/components/footer"
@@ -289,9 +289,8 @@ export default function Home() {
             <h2 id="contact-title" style={v({ "--i": 1 })} className="st display mt-5 max-w-[14ch] text-[clamp(38px,11vw,44px)] sm:text-[72px] lg:text-[96px]">
               Let&apos;s make something <span className="mark-contact">people share.</span>
             </h2>
-            <div className="st mt-10 grid gap-12 sm:mt-14 lg:grid-cols-[3fr_2fr] lg:gap-16" style={v({ "--i": 2 })}>
-              <ContactForm />
-              <div className="space-y-8 lg:border-l lg:border-line lg:pl-12">
+            <div className="st mt-10 border-t border-line pt-8 sm:mt-14" style={v({ "--i": 2 })}>
+              <div className="flex flex-col gap-8 sm:flex-row sm:flex-wrap sm:gap-x-16">
                 <div>
                   <p className="mono !text-[11px] text-muted">Email</p>
                   <div className="mt-2 flex flex-wrap items-center gap-3">

@@ -25,9 +25,6 @@ export const site = {
   management: "Aksh Salaria" as string | null,
   // Set to "/media-kit.pdf" (or a URL) to show the Download media kit button.
   mediaKit: null as string | null,
-  // Formspree form ID (e.g. "xyzabcd"), from formspree.io — create the form with
-  // salariaaksh@gmail.com. While null, the form shows the "email directly" error.
-  formspreeId: null as string | null,
   statsDate: "28 Sep 2026",
   title: "Aayan | Creator for Humour, Fits & Travel",
   description:
@@ -196,7 +193,7 @@ export const collabs = [
 ]
 
 export const images = {
-  hero: { src: "/photos/hero-mirror.webp", alt: "Aayan in glasses and a green shirt, taking a mirror selfie in an oval mirror", label: "HERO PHOTO · 4:5 · 1200×1500", ratio: "4 / 5" },
+  hero: { src: "/photos/hero-mirror.webp", alt: "Aayan in glasses and a green shirt, taking a mirror selfie in an oval mirror", label: "HERO PHOTO · 4:5", ratio: "4 / 5" },
   about: { src: "/photos/about.webp", alt: "Black-and-white mirror selfie of Aayan in a leather jacket", label: "ABOUT PHOTO · CANDID", ratio: "4 / 5" },
 } satisfies Record<string, ImageSlot>
 
@@ -238,9 +235,3 @@ export const services = [
   },
   { mark: "C", title: "Shoots", text: "Photo and reel shoots for your own channels." },
 ]
-
-export const form = {
-  collabTypes: ["Reel integration", "Outfit/transition reel", "Shoot", "Other"],
-  // Owner to set real ranges, e.g. "₹10k–25k". Placeholder shown until then.
-  budgets: ["[owner to set ranges]", "Prefer to discuss"],
-}

@@ -1,18 +1,18 @@
 import type { NextConfig } from "next"
 
 // Static CSP (no nonce middleware — keeps the page static). Instagram embed needs
-// its script + iframe origins; Formspree needs connect-src.
+// its script + iframe origins.
 const csp = [
   "default-src 'self'",
   "script-src 'self' 'unsafe-inline' https://www.instagram.com",
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob: https://*.cdninstagram.com https://www.instagram.com",
   "font-src 'self'",
-  "connect-src 'self' https://formspree.io https://www.instagram.com",
+  "connect-src 'self' https://www.instagram.com",
   "frame-src https://www.instagram.com",
   "object-src 'none'",
   "base-uri 'self'",
-  "form-action 'self' https://formspree.io",
+  "form-action 'self'",
   "frame-ancestors 'none'",
 ].join("; ")
 
