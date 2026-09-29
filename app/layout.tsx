@@ -3,6 +3,7 @@ import { Instrument_Sans, JetBrains_Mono } from "next/font/google"
 import localFont from "next/font/local"
 import "./globals.css"
 import { site } from "@/lib/content"
+import { SocialDock } from "@/components/social-dock"
 import { siteUrl as url } from "@/lib/site-url"
 
 // Static Archivo instance (wdth 125, wght 900, latin): ~14KB vs ~89KB for the variable file — LCP.
@@ -59,6 +60,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Skip to content
         </a>
         {children}
+        <SocialDock />
       </body>
     </html>
   )

@@ -35,6 +35,11 @@ export const site = {
     "Aayan (@aayann26_) is a Delhi/Jammu creator making relatable humour, outfit reels and travel content. 1.8M+ reel views. Collab enquiries welcome.",
 }
 
+/** wa.me click-to-chat link with the prefilled message, or null when no number is set */
+export const whatsappHref = site.whatsapp
+  ? `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(site.whatsappMessage)}`
+  : null
+
 export const hero = {
   eyebrow: "CREATOR · DELHI / JAMMU",
   headline: "Aayan",

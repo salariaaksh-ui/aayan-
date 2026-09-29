@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { about, collabs, gallery, hero, images, lanes, reels, services, site, stats } from "@/lib/content"
+import { about, collabs, gallery, hero, images, lanes, reels, services, site, stats, whatsappHref } from "@/lib/content"
 import { Nav } from "@/components/nav"
 import { Photo } from "@/components/photo"
 import { CountUp } from "@/components/count-up"
@@ -306,11 +306,11 @@ export default function Home() {
                     <span className="draw">{site.handle}</span> <span aria-hidden className="arr">↗</span>
                   </a>
                 </div>
-                {site.whatsapp && (
+                {whatsappHref && (
                   <div>
                     <p className="mono !text-[11px] text-muted">WhatsApp</p>
                     <a
-                      href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent(site.whatsappMessage)}`}
+                      href={whatsappHref}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="nudge mt-2 inline-block text-[18px] font-semibold"
